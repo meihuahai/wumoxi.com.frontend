@@ -1,27 +1,52 @@
 <template>
-    <navbar menu-classes="ml-auto" position="fixed" type="primary">
+    <navbar menu-classes="ml-auto"  type="info">
         <template slot-scope="{ toggle, isToggled }">
             <router-link class="navbar-brand" to="/presentation" v-popover:popover1>
-                My Site Name
+                {{ SiteName }}
             </router-link>
-            <el-popover
-                placement="bottom"
-                popper-class="popover"
-                ref="popover1"
-                trigger="hover"
-                width="200"
-            >
-                <div class="popover-body">
-                    Designed by Invision. Coded by Creative Tim
-                </div>
-            </el-popover>
         </template>
+
         <template slot="navbar-menu">
-            <drop-down tag="li" title="Sample Dropdown">
-                <nav-link class="dropdown-item">
-                    <i class="now-ui-icons shopping_box"></i> Headers
-                </nav-link>
-            </drop-down>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="https://www.creative-tim.com/product/vue-now-ui-kit"
+                    target="_blank"
+                >
+                    <i class="now-ui-icons ui-1_send"></i>
+                    <p>首 页</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="https://www.creative-tim.com/product/vue-now-ui-kit"
+                    target="_self"
+                >
+                    <i class="now-ui-icons shopping_tag-content"></i>
+                    <p>归 档</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="https://www.creative-tim.com/product/vue-now-ui-kit"
+                    target="_blank"
+                >
+                    <i class="fab fa-github"></i>
+                    <p>Github</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    href="https://www.creative-tim.com/product/vue-now-ui-kit"
+                    target="_blank"
+                >
+                    <i class="now-ui-icons objects_support-17"></i>
+                    <p>关 于</p>
+                </a>
+            </li>
         </template>
     </navbar>
 </template>
@@ -38,6 +63,11 @@
             NavbarToggleButton,
             NavLink,
             [Popover.name]: Popover
+        },
+        data() {
+            return {
+                "SiteName": "武沫汐",
+            }
         }
     };
 </script>

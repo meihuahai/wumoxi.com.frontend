@@ -18,6 +18,9 @@
 @import 'now-ui-kit/variables';
 @import 'now-ui-kit/mixins';
 
+// Wrapper
+@import "now-ui-kit/wrapper";
+
 // Plugins CSS
 @import "now-ui-kit/plugins/plugin-bootstrap-switch";
 @import "now-ui-kit/plugins/plugin-nouislider";

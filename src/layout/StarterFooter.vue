@@ -5,42 +5,17 @@
         class="footer"
     >
         <div class="container">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="https://www.creative-tim.com">
-                            Creative Tim
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https:///presentation.creative-tim.com">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https:///blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.creative-tim.com/license">
-                            License
-                        </a>
-                    </li>
-                </ul>
-            </nav>
             <div class="copyright">
-                &copy; {{ year }}, Designed by
-                <a href="https:///www.invisionapp.com" rel="noopener" target="_blank"
-                >Invision</a
-                >. Coded by
-                <a href="https://binarcode.com" rel="noopener" target="_blank"
-                >BinarCode</a
-                >
-                and
-                <a href="https://www.creative-tim.com" rel="noopener" target="_blank"
-                >Creative Tim</a
-                >.
+                <!-- Copyright -->
+                <span class="site">{{ site }}</span>
+                <span class="copyright">&copy;</span>
+                <a v-bind:href="authorUrl" rel="noopener" target="_blank">{{ author }}</a>
+                <span>{{ year }}</span>
+
+                <!-- Beian -->
+                <a v-for="beian in beians" class="beian" v-bind:href="beianUrl" rel="noopener" target="_blank">
+                    {{ beian }}
+                </a>
             </div>
         </div>
     </footer>
@@ -53,8 +28,16 @@
         },
         data() {
             return {
-                year: new Date().getFullYear()
+                year: new Date().getFullYear(),
+                site: process.env.VUE_APP_FOOTER_SITE,
+                author: process.env.VUE_APP_FOOTER_AUTHOR,
+                authorUrl: process.env.VUE_APP_FOOTER_AUTHOR_URL,
+                beians: process.env.VUE_APP_FOOTER_BEIAN.split(","),
+                beianUrl: process.env.VUE_APP_FOOTER_BEIAN_URL,
             };
+        },
+        created() {
+            console.log(this.beians)
         }
     };
 </script>

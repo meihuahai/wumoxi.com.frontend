@@ -1,7 +1,6 @@
 .section {
     padding: 70px 0;
     position: relative;
-    background: $white-color;
 
     .row + .category {
         margin-top: $margin-base-vertical;
@@ -305,6 +304,10 @@
 
 [data-background-color="orange"] {
     background-color: $orange-bg;
+}
+
+[data-background-color="info"] {
+    background-color: $info-color;
 }
 
 [data-background-color="black"] {

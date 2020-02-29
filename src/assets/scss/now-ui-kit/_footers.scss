@@ -5,35 +5,19 @@
         background-color: #f2f2f2;
     }
 
-    nav {
-        display: inline-block;
-        float: left;
-    }
-
-    ul {
-        margin-bottom: 0;
-        padding: 0;
-        list-style: none;
-
-        li {
-            display: inline-block;
-
-            a {
-                color: inherit;
-                padding: $padding-base-vertical;
-                font-size: $font-size-small;
-                text-transform: uppercase;
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-        }
-    }
-
     .copyright {
         font-size: $font-size-small;
+        .beian {
+            margin-left: 5px;
+        }
+        .site {
+            font-size: $font-size-large-medium;
+        }
+        .copyright {
+            font-size: $font-size-large-medium;
+            font-weight: $font-weight-bold;
+            margin: 0 1px 0 1px;
+        }
     }
 
     &:after {

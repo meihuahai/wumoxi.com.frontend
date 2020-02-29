@@ -16,6 +16,7 @@
             }
 
             .wrapper {
+                background-color: #00bbff;
                 @include transform-translate-x(-150px);
             }
 
@@ -33,6 +34,7 @@
                 }
 
                 .wrapper {
+                    background-color: #00bbff;
                     @include transform-translate-x(150px);
                 }
 
@@ -228,7 +230,8 @@
 
     .footer {
         .copyright {
-            float: right;
+            float: none;
+            text-align: center;
         }
     }
 }

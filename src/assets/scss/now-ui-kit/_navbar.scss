@@ -2,7 +2,7 @@
     padding-top: $navbar-padding-base;
     padding-bottom: $navbar-padding-base;
     min-height: 53px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 
     a {
@@ -17,8 +17,8 @@
         display: inline-block;
         margin: 0;
         line-height: 21px;
-        font-weight: inherit;
-        font-size: inherit;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-large-big;
     }
 
     .navbar-nav {
@@ -44,7 +44,7 @@
         }
 
         .nav-link:not(.btn) {
-            text-transform: uppercase;
+            text-transform: none;
             font-size: $font-size-mini;
             padding: $padding-base-vertical $padding-base-horizontal;
             line-height: $line-height-nav-link;
@@ -101,10 +101,11 @@
 
     .navbar-brand {
         text-transform: uppercase;
-        font-size: $font-size-small;
+        font-size: $font-size-large-navbar;
         padding-top: $padding-base-vertical;
         padding-bottom: $padding-base-vertical;
         line-height: $line-height-nav-link;
+        font-weight: $font-weight-bold;
     }
 
     .navbar-toggler {

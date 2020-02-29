@@ -10,10 +10,10 @@
             </div>
             <div
                 :class="[
-          { show: showMenu },
-          { 'has-image': menuImage },
-          navMenuClasses
-        ]"
+                  { show: showMenu },
+                  { 'has-image': menuImage },
+                  navMenuClasses
+                ]"
                 :style="menuImage ? `background: url(${menuImage}) 0% 0% / cover;` : ''"
                 class="navbar-collapse collapse"
                 data-color="orange"
