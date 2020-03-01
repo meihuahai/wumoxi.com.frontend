@@ -1,0 +1,18 @@
+.starter-page {
+    .left-content {
+        margin-right: 1rem;
+
+        .left-row {
+            margin-right: 0;
+        }
+    }
+
+    .right-content {
+
+    }
+    &:after {
+        display: table;
+        clear: both;
+        content: " ";
+    }
+}

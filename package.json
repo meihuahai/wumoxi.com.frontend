@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "bootstrap": "^4.3.0",
-        "element-ui": "^2.5.4",
+        "element-ui": "^2.13.0",
         "nouislider": "^11.1.0",
         "vue": "^2.6.6",
         "vue-lazy-load": "^0.0.7",
