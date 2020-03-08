@@ -1,5 +1,5 @@
 <template>
-    <navbar menu-classes="ml-auto"  type="info">
+    <navbar menu-classes="ml-auto"  type="default">
         <template slot-scope="{ toggle, isToggled }">
             <router-link class="navbar-brand" to="/presentation" v-popover:popover1>
                 {{ SiteName }}

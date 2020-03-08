@@ -279,6 +279,21 @@
         margin-left: 0;
         margin-bottom: 30px;
     }
+    h3,.h3{
+        font-size: $btn-icon-font-size-lg;
+    }
+    .section{
+        padding: 3rem 0;
+    }
+    .col-md-9,.col-xl-3{
+        padding-right: 0 !important;
+    }
+    .col-xl-3{
+        padding-left: 0 !important;
+    }
+    .lead{
+        font-size: $font-size-large !important;
+    }
 }
 
 @media screen and (max-width: 576px) {

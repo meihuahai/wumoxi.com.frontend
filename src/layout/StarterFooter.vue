@@ -13,7 +13,7 @@
                 <span>{{ year }}</span>
 
                 <!-- Beian -->
-                <a v-for="beian in beians" class="beian" v-bind:href="beianUrl" rel="noopener" target="_blank">
+                <a v-for="beian in beians" v-bind:key="beian" class="beian" v-bind:href="beianUrl" rel="noopener" target="_blank">
                     {{ beian }}
                 </a>
             </div>

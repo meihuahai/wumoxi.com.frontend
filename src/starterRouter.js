@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Starter from './pages/StarterPage.vue';
+import Info from './pages/Info.vue';
 import StarterNavbar from './layout/StarterNavbar.vue';
 import StarterFooter from './layout/StarterFooter.vue';
 
@@ -18,9 +19,18 @@ export default new Router({
             },
             props: {
                 header: {colorOnScroll: 400},
-                footer: {backgroundColor: 'info'}
+                footer: {backgroundColor: 'black'}
             }
-        }
+        },
+        {
+            path: '/info',
+            name: 'info',
+            components: {default: Info, header: StarterNavbar, footer: StarterFooter},
+            props: {
+                header: {colorOnScroll: 400,},
+                footer: {backgroundColor: 'black'}
+            }
+        },
     ],
     scrollBehavior: to => {
         if (to.hash) {

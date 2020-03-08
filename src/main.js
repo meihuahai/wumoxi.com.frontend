@@ -20,10 +20,12 @@ import App from './App.vue';
 // import router from './router';
 import router from './starterRouter';
 import NowUiKit from './plugins/now-ui-kit';
+import FontAwesome from './plugins/font-awesome';
 
 Vue.config.productionTip = false;
 
 Vue.use(NowUiKit);
+Vue.use(FontAwesome);
 
 new Vue({
     router,

@@ -2,11 +2,11 @@
     <div class="starter-page">
         <div class="section">
             <div class="container">
-                <div class="col-md-8 ml-auto col-xl-8 mr-auto float-left left-content">
+                <div class="col-md-9 ml-auto col-xl-9 mr-auto float-left left-content">
                     <div class="row left-row">
-                        <div class="jumbotron jumbotron-border" style="position: relative; width: 100%;">
-                            <div class="badge badge-primary badge-custom">Golang</div>
-                            <a href="http://www.baidu.com">
+                        <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
+                            <div class="badge badge-primary badge-custom ">Golang</div>
+                            <a href="#/info">
                                 <h3 class="reset-h3">Golang结构体使用</h3>
                             </a>
                             <span>
@@ -23,17 +23,17 @@
                                     </span>
                                 </span>
                                 <span class="pull-right">
-                                    <span class="oi oi-comment-square"> <b>0</b> </span>
-                                    <span class="oi oi-eye"> <b>0</b> </span>
-                                    <span class="oi oi-thumb-up"> <b>0</b> </span>
+                                    <span class="fa fa-comment"> <b>0</b> </span>
+                                    <span class="fa fa-eye"> <b>0</b> </span>
+                                    <span class="fa fa-thumbs-up"> <b>0</b> </span>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div class="row left-row">
-                        <div class="jumbotron jumbotron-border" style="position: relative; width: 100%;">
+                        <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
                             <div class="badge badge-primary badge-custom">Golang</div>
-                            <a href="http://www.baidu.com">
+                            <a href="#/info">
                                 <h3 class="reset-h3">Golang结构体使用</h3>
                             </a>
                             <span>
@@ -50,17 +50,17 @@
                                     </span>
                                 </span>
                                 <span class="pull-right">
-                                    <span class="oi oi-comment-square"> <b>0</b> </span>
-                                    <span class="oi oi-eye"> <b>0</b> </span>
-                                    <span class="oi oi-thumb-up"> <b>0</b> </span>
+                                    <span class="fa fa-comment"> <b>0</b> </span>
+                                    <span class="fa fa-eye"> <b>0</b> </span>
+                                    <span class="fa fa-thumbs-up"> <b>0</b> </span>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div class="row left-row">
-                        <div class="jumbotron jumbotron-border" style="position: relative; width: 100%;">
+                        <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
                             <div class="badge badge-primary badge-custom">Golang</div>
-                            <a href="http://www.baidu.com">
+                            <a href="#/info">
                                 <h3 class="reset-h3">Golang结构体使用</h3>
                             </a>
                             <span>
@@ -77,17 +77,17 @@
                                     </span>
                                 </span>
                                 <span class="pull-right">
-                                    <span class="oi oi-comment-square"> <b>0</b> </span>
-                                    <span class="oi oi-eye"> <b>0</b> </span>
-                                    <span class="oi oi-thumb-up"> <b>0</b> </span>
+                                    <span class="fa fa-comment"> <b>0</b> </span>
+                                    <span class="fa fa-eye"> <b>0</b> </span>
+                                    <span class="fa fa-thumbs-up"> <b>0</b> </span>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div class="row left-row">
-                        <div class="jumbotron jumbotron-border" style="position: relative; width: 100%;">
+                        <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
                             <div class="badge badge-primary badge-custom">Golang</div>
-                            <a href="http://www.baidu.com">
+                            <a href="#/info">
                                 <h3 class="reset-h3">Golang结构体使用</h3>
                             </a>
                             <span>
@@ -104,17 +104,17 @@
                                     </span>
                                 </span>
                                 <span class="pull-right">
-                                    <span class="oi oi-comment-square"> <b>0</b> </span>
-                                    <span class="oi oi-eye"> <b>0</b> </span>
-                                    <span class="oi oi-thumb-up"> <b>0</b> </span>
+                                    <span class="fa fa-comment"> <b>0</b> </span>
+                                    <span class="fa fa-eye"> <b>0</b> </span>
+                                    <span class="fa fa-thumbs-up"> <b>0</b> </span>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div class="row left-row">
-                        <div class="jumbotron jumbotron-border" style="position: relative; width: 100%;">
+                        <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
                             <div class="badge badge-primary badge-custom">Golang</div>
-                            <a href="http://www.baidu.com">
+                            <a href="#/info">
                                 <h3 class="reset-h3">Golang结构体使用</h3>
                             </a>
                             <span>
@@ -131,24 +131,60 @@
                                     </span>
                                 </span>
                                 <span class="pull-right">
-                                    <span class="oi oi-comment-square"> <b>0</b> </span>
-                                    <span class="oi oi-eye"> <b>0</b> </span>
-                                    <span class="oi oi-thumb-up"> <b>0</b> </span>
+                                    <span class="fa fa-comment"> <b>0</b> </span>
+                                    <span class="fa fa-eye"> <b>0</b> </span>
+                                    <span class="fa fa-thumbs-up"> <b>0</b> </span>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 ml-auto col-xl-4 mr-auto float-right right-content">
+                <div class="col-md-3 ml-auto col-xl-3 mr-auto float-right right-content">
                     <div class="row">
-                        <el-card class="box-card" shadow="never">
-                            <div slot="header" class="clearfix">
-                                <span>卡片名称</span>
+                        <div class="card bgshadow">
+                            <div class="card-header">
+                                目录
                             </div>
-                            <el-table class="box-card-table" :data="tableData">
-                                <el-table-column prop="address" ></el-table-column>
-                            </el-table>
-                        </el-card>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Golang结构体使用</li>
+                                <li class="list-group-item">t事件可以将代码进行解</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item">Golang结构体使用</li>
+                                <li class="list-group-item">t事件可以将代码进行解</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item">Golang结构体使用</li>
+                                <li class="list-group-item">t事件可以将代码进行解</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item">Golang结构体使用</li>
+                                <li class="list-group-item">t事件可以将代码进行解</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="card bgshadow">
+                            <div class="card-header">
+                                目录
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Golang结构体使用</li>
+                                <li class="list-group-item">t事件可以将代码进行解</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item">Golang结构体使用</li>
+                                <li class="list-group-item">t事件可以将代码进行解</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item">Golang结构体使用</li>
+                                <li class="list-group-item">t事件可以将代码进行解</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item">Golang结构体使用</li>
+                                <li class="list-group-item">t事件可以将代码进行解</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </div>
