@@ -1,50 +1,19 @@
 <template>
-    <navbar menu-classes="ml-auto"  type="default">
+    <navbar menu-classes="ml-auto" type="default">
         <template slot-scope="{ toggle, isToggled }">
             <router-link class="navbar-brand" to="/presentation" v-popover:popover1>
                 {{ SiteName }}
             </router-link>
         </template>
-
         <template slot="navbar-menu">
-            <li class="nav-item">
-                <a
-                    class="nav-link"
-                    href="https://www.creative-tim.com/product/vue-now-ui-kit"
-                    target="_blank"
-                >
-                    <i class="now-ui-icons ui-1_send"></i>
-                    <p>首 页</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a
-                    class="nav-link"
-                    href="https://www.creative-tim.com/product/vue-now-ui-kit"
-                    target="_self"
-                >
-                    <i class="now-ui-icons shopping_tag-content"></i>
-                    <p>归 档</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a
-                    class="nav-link"
-                    href="https://www.creative-tim.com/product/vue-now-ui-kit"
-                    target="_blank"
-                >
-                    <i class="fab fa-github"></i>
-                    <p>Github</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a
-                    class="nav-link"
-                    href="https://www.creative-tim.com/product/vue-now-ui-kit"
-                    target="_blank"
-                >
-                    <i class="now-ui-icons objects_support-17"></i>
-                    <p>关 于</p>
+            <li v-for="link in links" class="nav-item">
+                <router-link class="nav-link" :to="link.url" v-if="!link.outside">
+                    <i :class="link.icon"></i>
+                    <p>{{ link.description }}</p>
+                </router-link>
+                <a class="nav-link" :href="link.url" :target="link.target" v-else>
+                    <i :class="link.icon"></i>
+                    <p>{{ link.description }}</p>
                 </a>
             </li>
         </template>
@@ -52,21 +21,26 @@
 </template>
 
 <script>
-    import {DropDown, NavbarToggleButton, Navbar, NavLink} from '@/components';
+    import {DropDown, NavbarToggleButton, Navbar} from '@/components';
     import {Popover} from 'element-ui';
-
+    const NavLinks = [
+        {url: "/", description: "首 页", icon: "now-ui-icons ui-1_send", target: null, outside: false},
+        {url: "/archives", description: "归 档", icon: "now-ui-icons shopping_tag-content", target: null, outside: false},
+        {url: "https://www.github.com/wumoxi", description: "Github", icon: "fab fa-github", target:"_blank", outside: true},
+        {url: "/about", description: "关 于", icon: "now-ui-icons objects_support-17", target: null, outside: false},
+    ];
     export default {
         name: 'main-navbar',
         components: {
             DropDown,
             Navbar,
             NavbarToggleButton,
-            NavLink,
             [Popover.name]: Popover
         },
         data() {
             return {
                 "SiteName": "武沫汐",
+                "links": NavLinks,
             }
         }
     };
