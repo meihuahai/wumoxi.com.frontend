@@ -21,11 +21,13 @@ import App from './App.vue';
 import router from './starterRouter';
 import NowUiKit from './plugins/now-ui-kit';
 import FontAwesome from './plugins/font-awesome';
+import PrismJS from './plugins/prism';
 
 Vue.config.productionTip = false;
 
 Vue.use(NowUiKit);
 Vue.use(FontAwesome);
+Vue.use(PrismJS);
 
 new Vue({
     router,

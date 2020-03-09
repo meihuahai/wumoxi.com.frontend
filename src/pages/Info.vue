@@ -29,7 +29,7 @@
                                  <span class="badge badge-success">Golang</span>
                             </span>
                             <div>
-                                <vue-markdown :source="contents"></vue-markdown>
+                                <vue-markdown :source="article"></vue-markdown>
                             </div>
                             <hr>
 
@@ -67,114 +67,193 @@
 </template>
 <script>
     import VueMarkdown from 'vue-markdown'
-    const a = `
-    # 沫汐小笔头开发日志
+    const article = `
+# jsonRPC简单使用
 
-记录在学习或工作中使用过的相关技术，以防止岁月的冲击！
+目录结构如下：
 
-## Golang
+\`\`\`shell
+rservice
+├── rservice.go
+├── client
+│   └── client.go
+└── server
+    └── server.go
 
-### [Gin框架](markdown/golang/GolangGin.md)
-### [HTTP标准库](markdown/golang/HTTPStandardLibrary.md)
-### [HTTP服务器的性能分析](markdown/golang/HTTPServerPerformanceAnalysis.md)
-### [HTML文档操作](https://www.flysnow.org/2018/01/20/golang-goquery-examples-selector.html)
-### [分布式系统特点](markdown/golang/FeatruesOfDistributedSystem.md)
-### [JsonRPC简单使用](markdown/golang/JSONRPCSampleUse.md)
-### [URL去重方式](markdown/golang/URLDeduplication.md)
-### [Golang注意点](markdown/golang/GolangNotice.md)
-### [Golang算法](markdown/golang/GolangArithmetic.md)
-### [Golang查看文档](markdown/golang/GolangCheckViewDocument.md)
-### [Golang编程心得体会](markdown/golang/GolangProgramming.md)
-### [Golang关于反射的使用案例](markdown/golang/GolangReflectCase.md)
-### [Golang中int和int64是相同类型吗？](markdown/golang/GolangInt64.md)
-### [Golang切割包含不定个数空格的字符串怎么处理？](markdown/golang/GolangStringsFields.md)
+\`\`\`
 
-## 计算机基础
+## 定义RPC服务方法
 
-### [OSI模型](https://zh.wikipedia.org/wiki/OSI%E6%A8%A1%E5%9E%8B)
-### [TCP/IP协议族](https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F)
-### [原码, 反码, 补码](https://www.cnblogs.com/zhangziqiu/archive/2011/03/30/ComputerCode.html)
+\`\`\`go
+// rservice.go
+package rservice
 
-## 计算机科学术语
+import "errors"
 
-### [认证(authentication)和授权(authorization)的区别](https://blog.csdn.net/u011537073/article/details/72876139)
+// 定义rpc服务
+type TestService struct {}
 
-## Javascript&JQUERY&VUE
+// 定义rpc服务参数结构类型
+type Args struct {
+\tA, B int
+}
 
-### [JSONP](markdown/frontend/jquery/Jsonp.md)
-### [JavaScript使用正则处理服务端返回数据](markdown/frontend/javascript/JavascriptRegexpUsing.md)
+// 定义rpc服务方法
+func (TestService) Div(args Args, result *float64) error {
+\tif args.B == 0 {
+\t\treturn errors.New("division by zero")
+\t}
+\t*result = float64(args.A) / float64(args.B)
+\treturn nil
+}
+\`\`\`
 
-## LINUX[¹](https://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html)
+上面定义了一个名为 \`TestService\` 的服务，这个服务有一个方法 \`Div\`，这个方法就是进行简单的业务处理也就是进行除法运算，并把运算结果写入到 \`result\` 变量内。
 
-### [CentOS7开机启动服务](markdown/Linux/CentOS7OpenStartService.md)
-### [CentOS7设置SS服务开机启动](markdown/Linux/CentOS7SettingSSServiceOpenStart.md)
-### [CentOS7安装Docker](https://docs.docker.com/install/linux/docker-ce/centos/)
-### [CentOS7开放端口号](markdown/Linux/CentOS7OpenPorts.md)
-### [CentOS7系统资源管理](markdown/Linux/CentOS7SystemResourceManagement.md)
-### [CentOS7文件处理](markdown/Linux/CentOS7SystemFileProcess.md)
-### [CentOS7用户管理](markdown/Linux/CentOS7UserManagement.md)
-### [CentOS7查看端口占用](markdown/Linux/CentOS7ViewPortOccupancy.md)
-### [CentOS7查看进程信息](markdown/Linux/CentOS7ViewProcessInformation.md)
-### [CentOS7命令行翻越](markdown/Linux/CentOS7CommandLineRollover.md)
-### [CentOS7之VIM快速替换所有](markdown/Linux/CentOS7VimReplaceAllMatchChar.md)
-### [MATERIAL-UI](https://material-ui.com/zh/)
-### [MATERIAL DESIGN](https://material.io/)
+## 注册RPC服务
 
-## Mac
+编写RPC服务端服务程序
 
-### [Mac快捷键](https://support.apple.com/zh-cn/HT201236)
-### [Mac检测远程服务端口是否可用](markdown/mac/CentOS7CheckRmoteServicePortAvailable.md)
+\`\`\`go
+// server/server.go
+package main
 
-## Git
+import (
+\t"log"
+\t"net"
+\t"net/rpc"
+\t"net/rpc/jsonrpc"
+\t"rservice"
+)
 
-### [Git关于标签的操作](markdown/git/GitTagOperations.md)
+func main() {
+\t// 服务端注册rpc服务
+\terr := rpc.Register(rservice.TestService{})
+\tif err != nil {
+\t\tpanic(err)
+\t}
 
-## Nginx
+\t// 监听服务端口
+\tlistener, err := net.Listen("tcp", ":8859")
+\tif err != nil {
+\t\tpanic(err)
+\t}
 
-### [Nginx添加SSH证书](https://certbot.eff.org/)
+\t// 接收连接并处理服务调用
+\tfor {
+\t\taccept, err := listener.Accept()
+\t\tif err != nil {
+\t\t\tlog.Printf("accept error: %s\\n", err)
+\t\t\tcontinue
+\t\t}
+\t\tgo jsonrpc.ServeConn(accept)
+\t}
+}
+\`\`\`
 
-## Docker
+启动RPC服务端服务程序
 
-### [Docker开机启动容器](markdown/docker/DockerOpenStartContainerService.md)
-### [Docker实时查看容器日志](markdown/docker/RealTimeCheckViewDockerContainerLog.md)
-### [Docker数据卷Volumes](./markdown/docker/Docker数据卷Volumes.md)
-### [Docker下安装ElasticSearch](markdown/docker/DockerInstallElasticsearch.md)
-### [Docker下安装Kibana](markdown/docker/DockerInstallKibana.md)
+\`\`\`shell
+$ go run server/server.go
+\`\`\`
 
-## ElasticSearch
+## 调用RCP服务
 
-### [settings和mappings详解](https://www.cnblogs.com/zlslch/p/6474424.html)
-### [索引库设置mappings具体字段类型，禁止自动根据数据格式识别它的类型](https://blog.csdn.net/wfs1994/article/details/80766935)
+### 使用telnet工具进行RPC服务调用(手动调用)
 
-## PHP
+\`\`\`shell
+$ telnet 127.0.0.1 8859
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+\`\`\`
 
-### [Yii2接入PayPal支付](markdown/php/pay/yii2_join_up_paypal.md)
-### [Laravel项目重新部署安装依赖](markdown/php/composer/LaravelProjectRearrangeInstallationDependencies.md)
+输入调用参数
 
-## OSS
+\`\`\`shell
+{"method":"TestService.Div", "params":[{"A":15, "B":6}], "id": 12345}
+\`\`\`
 
-### [基于读写权限ACL的权限控制](https://help.aliyun.com/document_detail/100676.html?spm=a2c4g.11186623.2.18.4c314c071HLPZl)
-### [RAM子账户授权OSS单个bucket中部分文件的访问权限](https://help.aliyun.com/knowledge_detail/39553.html?spm=a2c4g.11186623.4.6.7fdd4c074nVFcA)
-`;
-    const b = a + "```go\n" +
-        "package main\n" +
-        "\n" +
-        "import \"github.com/gin-gonic/gin\"\n" +
-        "\n" +
-        "func main() {\n" +
-        "    r := gin.Default()\n" +
-        "    r.GET(\"/ping\", func(c *gin.Context) {\n" +
-        "        c.JSON(200, gin.H{\n" +
-        "            \"message\": \"pong\",\n" +
-        "        })\n" +
-        "    })\n" +
-        "    r.Run() // listen and serve on 0.0.0.0:8080 (for windows \"localhost:8080\")\n" +
-        "}\n" +
-        "```";
+- method参数为要调用的RPC服务方法
+- params参数为调用RPC服务方法需要传递的参数
+- id参数为调用编号，调用结束后服务端会原样返回
+
+----------------------------------------
+
+返回调用结果
+
+\`\`\`shell
+{"id":12345,"result":2.5,"error":null}
+\`\`\`
+
+### 使用RPC客户端进行RPC服务调用(自动调用)
+
+编写调用程序
+
+\`\`\`go
+// client/client.go
+package main
+
+import (
+\t"fmt"
+\t"net"
+\t"net/rpc/jsonrpc"
+\t"rservice"
+)
+
+func main() {
+\t// 连接到RPC服务端
+\tconn, err := net.Dial("tcp", ":8859")
+\tif err != nil {
+\t\tpanic(err)
+\t}
+
+\t// 创建RPC客户端
+\tclient := jsonrpc.NewClient(conn)
+
+\t// 声明RPC调用回复结果
+\tvar reply float64
+
+\t// 调用RPC服务
+\terr = client.Call("TestService.Div", rservice.Args{A:20, B:9}, &reply)
+\tif err != nil {
+\t\tfmt.Printf("RPC call error: %s\\n", err)
+\t} else {
+\t\tfmt.Printf("RPC call result: %f\\n", reply)
+\t}
+
+\terr = client.Call("TestService.Div", rservice.Args{A:20, B:0}, &reply)
+\tif err != nil {
+\t\tfmt.Printf("RPC call error: %s\\n", err)
+\t} else {
+\t\tfmt.Printf("RPC call result: %f\\n", reply)
+\t}
+}
+\`\`\`
+
+返回调用结果
+
+\`\`\`shell
+RPC call result: 2.222222
+RPC call error: division by zero
+\`\`\`
+
+## 示例代码
+
+[jsonRPC-Sample-Use](/code/golang/rservice)
+
+## 目录
+[Back](../../README.md)
+`
     export default {
         name: 'starter',
         data() {
             return {
+                source: new Date().toLocaleTimeString(),
+                anchorAttrs: {
+                    target: '_blank',
+                    rel: 'noopener noreferrer nofollow'
+                },
                 tableData: [{
                     address: '上海市普陀区金沙江路 1518 弄'
                 }, {
@@ -184,7 +263,7 @@
                 }, {
                     address: '上海市普陀区金沙江路 1516 弄'
                 }],
-                contents:b,
+                article: article
             }
         },
         components: {
