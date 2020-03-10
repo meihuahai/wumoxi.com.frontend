@@ -6,7 +6,8 @@
                     <div class="row left-row">
                         <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
                             <div class="badge badge-primary badge-custom ">Golang</div>
-                            <h3 class="reset-h3">Golang结构体使用 param id: {{ this.$route.params.id }} query r: {{ this.$route.query.r }}</h3>
+                            <h3 class="reset-h3">Golang结构体使用 param id: {{ this.$route.params.id }} query r: {{
+                                this.$route.query.r }}</h3>
                             <div class="lead">
                                 <span class="pull-left">
                                     <span class="oi oi-timer">
@@ -255,18 +256,18 @@ RPC call error: division by zero
                 }, {
                     address: '上海市普陀区金沙江路 1516 弄'
                 }],
-                article: "",
+                article: articleData,
             }
         },
-        created() {
-            this.article = articleData;
-        },
     };
+
+
 </script>
 <style>
     .starter-page {
         min-height: calc(100vh - 95px);
     }
+
     .text {
         font-size: 14px;
     }
@@ -280,6 +281,7 @@ RPC call error: division by zero
         display: table;
         content: "";
     }
+
     .clearfix:after {
         clear: both
     }
@@ -290,6 +292,7 @@ RPC call error: division by zero
         box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0, rgba(0, 0, 0, 0.3) 0 -1px 0;
         box-shadow: 0 0 3px rgba(55, 55, 55, 0.7);
     }
+
     .box-card-table {
         background: rgba(255, 255, 255, 0.0);
     }
