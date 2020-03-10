@@ -21,6 +21,11 @@ import Modal from './Modal.vue';
 import Parallax from './Parallax.vue';
 import Slider from './Slider.vue';
 
+import ArticleItem from './ArticleItem.vue';
+import SidebarItem from './SidebarItem.vue';
+import Sidebar from './Sidebar.vue';
+import ButtonCounter from './ButtonCounter.vue';
+
 import Pagination from './Pagination.vue';
 
 export {
@@ -44,5 +49,9 @@ export {
     Modal,
     Parallax,
     Slider,
-    Button
+    Button,
+    ArticleItem,
+    SidebarItem,
+    Sidebar,
+    ButtonCounter,
 };

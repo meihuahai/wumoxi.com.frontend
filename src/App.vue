@@ -11,7 +11,9 @@
     export default {
         watch: {
             '$route'(to, from) {
-                this.$router.go(0)
+                if (to.path.indexOf('/info/')  === 0) {
+                    this.$router.go(0);
+                }
             }
         }
     };

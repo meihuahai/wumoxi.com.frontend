@@ -21,6 +21,7 @@
     </footer>
 </template>
 <script>
+
     export default {
         props: {
             backgroundColor: String,

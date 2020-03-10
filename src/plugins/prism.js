@@ -19,6 +19,9 @@ import 'prismjs/components/prism-markup'
 import 'prismjs/components/prism-markup-templating'
 import 'prismjs/components/prism-php.min';
 
+
+console.log("prism is called!");
+
 export default {
     install(Vue) {
         Vue.use(Prism);

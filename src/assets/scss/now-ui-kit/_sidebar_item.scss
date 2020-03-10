@@ -1,0 +1,33 @@
+.abstract_view{
+    margin-left: 0;
+    .card{
+        font-weight: $font-weight-normal;
+        margin: 0 0.8rem;
+        .card-header{
+            line-height: $line-height-normal;
+            padding: $padding;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+            font-weight: $font-weight-bold;
+            font-size:$font-size-large-medium;
+        }
+        .list-group{
+            padding: $padding;
+            .list-group-item{
+                background: none;
+                font-weight: $font-weight-normal;
+                font-style: $font-size-h6;
+                border: 0 !important;
+                padding: $padding-tb;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .abstract_view{
+        .card{
+            margin-left: 0 !important;
+            margin-bottom: $line-height-nav-link;
+        }
+    }
+}
