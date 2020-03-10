@@ -1,12 +1,12 @@
 <template>
     <navbar menu-classes="ml-auto" type="default">
         <template slot-scope="{ toggle, isToggled }">
-            <router-link class="navbar-brand" to="/presentation" v-popover:popover1>
-                {{ SiteName }}
+            <router-link class="navbar-brand" to="/" v-popover:popover1>
+                {{ Site }}
             </router-link>
         </template>
         <template slot="navbar-menu">
-            <li v-for="link in links" class="nav-item">
+            <li v-for="link in links" :key="link.url" class="nav-item">
                 <router-link class="nav-link" :to="link.url" v-if="!link.outside">
                     <i :class="link.icon"></i>
                     <p>{{ link.description }}</p>
@@ -39,10 +39,10 @@
         },
         data() {
             return {
-                "SiteName": "武沫汐",
+                "Site": "武沫汐",
                 "links": NavLinks,
             }
-        }
+        },
     };
 </script>
 

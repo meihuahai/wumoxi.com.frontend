@@ -6,7 +6,7 @@
                     <div class="row left-row">
                         <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
                             <div class="badge badge-primary badge-custom ">Golang</div>
-                            <h3 class="reset-h3">Golang结构体使用</h3>
+                            <h3 class="reset-h3">Golang结构体使用 param id: {{ this.$route.params.id }} query r: {{ this.$route.query.r }}</h3>
                             <div class="lead">
                                 <span class="pull-left">
                                     <span class="oi oi-timer">
@@ -20,11 +20,6 @@
                                 </span>
                             </div>
                             <div class="clearfix"></div>
-
-
-                            <a href="http://www.baidu.com">
-
-                            </a>
                             <span>
                                  <span class="badge badge-success">Golang</span>
                             </span>
@@ -32,10 +27,8 @@
                                 <vue-markdown :source="article"></vue-markdown>
                             </div>
                             <hr>
-
                         </div>
                     </div>
-
                 </div>
                 <div class="col-md-3 ml-auto col-xl-3 mr-auto float-right right-content">
                     <div class="row">
@@ -56,7 +49,6 @@
                                 <li class="list-group-item">Golang结构体使用</li>
                                 <li class="list-group-item">t事件可以将代码进行解</li>
                                 <li class="list-group-item">Vestibulum at eros</li>
-
                             </ul>
                         </div>
                     </div>
@@ -65,9 +57,9 @@
         </div>
     </div>
 </template>
+
 <script>
-    import VueMarkdown from 'vue-markdown'
-    const article = `
+    const articleData = `
 # jsonRPC简单使用
 
 目录结构如下：
@@ -246,7 +238,7 @@ RPC call error: division by zero
 [Back](../../README.md)
 `
     export default {
-        name: 'starter',
+        name: 'info',
         data() {
             return {
                 source: new Date().toLocaleTimeString(),
@@ -263,11 +255,11 @@ RPC call error: division by zero
                 }, {
                     address: '上海市普陀区金沙江路 1516 弄'
                 }],
-                article: article
+                article: "",
             }
         },
-        components: {
-            VueMarkdown
+        created() {
+            this.article = articleData;
         },
     };
 </script>

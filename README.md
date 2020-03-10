@@ -16,7 +16,7 @@ Create awesome, lifelike prototypes with InVision and Now so your users can expe
 
 To get the PSD and Sketch files, please visit Invision (https://www.invisionapp.com/now).
 
-Technologies used: 
+Technologies used:
 [Vue.js (2.5)](https://vuejs.org/) as framework for development.
 [Vue CLI 3](https://github.com/vuejs/vue-cli) for project scaffolding.
 [Vue Router](https://router.vuejs.org/) for handling routes.
@@ -86,7 +86,7 @@ Vue Now Ui Kit
 |-- src
         |-- App.vue
         |-- main.js
-        |-- router.js
+        |-- exampleRouter.js
         |-- assets
         |   |-- fonts
         |   |-- scss

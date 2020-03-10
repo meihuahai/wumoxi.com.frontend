@@ -128,7 +128,7 @@
 <script>
     import VueMarkdown from 'vue-markdown'
     export default {
-        name: 'starter',
+        name: 'archives',
         data() {
             return {
                 source: new Date().toLocaleTimeString(),

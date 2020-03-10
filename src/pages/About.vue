@@ -246,7 +246,7 @@ RPC call error: division by zero
 [Back](../../README.md)
 `
     export default {
-        name: 'starter',
+        name: 'about',
         data() {
             return {
                 source: new Date().toLocaleTimeString(),

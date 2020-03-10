@@ -17,17 +17,18 @@
 import Vue from 'vue';
 import App from './App.vue';
 // You can change this import to `import router from './starterRouter'` to quickly start development from a blank layout.
-// import router from './router';
-import router from './starterRouter';
+// import router from './exampleRouter';
+import router from './router';
+import VueMarkdown from 'vue-markdown'
+Vue.component('vue-markdown', VueMarkdown);
 import NowUiKit from './plugins/now-ui-kit';
 import FontAwesome from './plugins/font-awesome';
 import PrismJS from './plugins/prism';
 
 Vue.config.productionTip = false;
-
+Vue.use(PrismJS);
 Vue.use(NowUiKit);
 Vue.use(FontAwesome);
-Vue.use(PrismJS);
 
 new Vue({
     router,

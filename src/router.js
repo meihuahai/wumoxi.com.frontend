@@ -1,53 +1,53 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Index from './pages/Index.vue';
-import Landing from './pages/Landing.vue';
-import Login from './pages/Login.vue';
-import Profile from './pages/Profile.vue';
-import MainNavbar from './layout/MainNavbar.vue';
-import MainFooter from './layout/MainFooter.vue';
+import Info from './pages/Info.vue';
+import Archives from './pages/Archives.vue';
+import About from './pages/About.vue';
+import Navbar from './layout/Navbar.vue';
+import Footer from './layout/Footer.vue';
 
 Vue.use(Router);
 
-
 export default new Router({
-    linkExactActiveClass: 'active',
     routes: [
         {
             path: '/',
             name: 'index',
-            components: {default: Index, header: MainNavbar, footer: MainFooter},
+            components: {default: Index, header: Navbar, footer: Footer},
             props: {
                 header: {colorOnScroll: 400},
                 footer: {backgroundColor: 'black'}
             }
         },
         {
-            path: '/landing',
-            name: 'landing',
-            components: {default: Landing, header: MainNavbar, footer: MainFooter},
+            // use vue router dynamic segment.
+            path: '/info/:id',
+            name: 'info',
+            components: {default: Info, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400},
+                header: {colorOnScroll: 400,},
                 footer: {backgroundColor: 'black'}
             }
         },
         {
-            path: '/login',
-            name: 'login',
-            components: {default: Login, header: MainNavbar},
+            path: '/archives',
+            name: 'archives',
+            components: {default: Archives, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400}
+                header: {colorOnScroll: 400,},
+                footer: {backgroundColor: 'black'}
             }
         },
         {
-            path: '/profile',
-            name: 'profile',
-            components: {default: Profile, header: MainNavbar, footer: MainFooter},
+            path: '/about',
+            name: 'about',
+            components: {default: About, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400},
+                header: {colorOnScroll: 400,},
                 footer: {backgroundColor: 'black'}
             }
-        }
+        },
     ],
     scrollBehavior: to => {
         if (to.hash) {
