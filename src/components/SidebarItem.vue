@@ -1,11 +1,11 @@
 <template>
-    <div class="row abstract_view">
+    <div class="row abstract_view" >
         <div class="card bgshadow">
             <div class="card-header">
                 {{ title }}
             </div>
-            <ul v-for="item in items" :key="item.id" class="list-group list-group-flush">
-                <li class="list-group-item">{{ item.title || item.name }}</li>
+            <ul  class="list-group list-group-flush">
+                <li class="list-group-item" v-for="item in items" :key="item.id">{{ item.title || item.name }}</li>
             </ul>
         </div>
     </div>

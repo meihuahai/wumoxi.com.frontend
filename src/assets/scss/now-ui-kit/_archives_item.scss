@@ -1,0 +1,81 @@
+.archives-item {
+    margin-right: 0;
+    .jumbotron{
+        padding: $padding-card;
+        .badge-custom {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 0.2rem 0 0.8rem 0;
+            line-height: 1.2rem;
+            min-width: 6rem;
+            width: auto;
+            font-size: $font-paragraph;
+        }
+        .container{
+            .archive-post{
+                .archive-item{
+                    display: inline-block;
+                    font-size: $font-size-large-medium;
+                    color: #000;
+                    padding: $padding-tb;
+                    transition: all 0.1s;
+                    text-align: justify;
+                    &:hover{
+                        text-decoration: none;
+                        padding-left: $padding-left;
+                        transition: all 0.1s;
+                    }
+                    span{
+                        color: #717070;
+                        margin-right: $margin-base-horizontal;
+                    }
+                }
+
+                .view-more{
+                    font-size: $font-size-blockquote;
+                    float: right;
+                    clear: both;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 576px){
+    .archives-item {
+        .jumbotron {
+            padding: 2.4rem 0.5rem 1rem;
+        }
+        .container{
+            padding: 0;
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .archives-item{
+        .jumbotron{
+            .lead{
+                line-height: $font-size-h3;
+            }
+            .badge-custom{
+                font-size: $font-size-small;
+            }
+        }
+        .container{
+            padding: 0;
+            .archive-post{
+                padding: 0 !important;
+                .archive-item{
+                    font-size: $font-size-blockquote !important;
+                    padding: $padding-tbsm !important;
+                    span{
+                        margin-right: 0 !important; ;
+                    }
+                }
+            }
+        }
+    }
+}

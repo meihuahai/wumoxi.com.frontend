@@ -6,7 +6,7 @@
                     <div class="row left-row" v-if="article !== {}">
                         <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
                             <div class="badge badge-primary badge-custom ">{{ article.category }}</div>
-                            <h3 class="reset-h3">{{ article.title }} param id: {{ this.$route.params.id }} query r: {{this.$route.query.r }}</h3>
+                            <h3 class="reset-h3">{{ article.title }}</h3>
                             <div class="lead">
                                 <span class="pull-left">
                                     <span class="oi oi-timer">

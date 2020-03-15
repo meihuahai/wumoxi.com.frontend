@@ -2,11 +2,10 @@
 .badge {
     border-radius: 8px;
     padding: 4px 8px;
-    text-transform: uppercase;
-    font-size: $font-size-mini;
+    font-size: $font-size-small;
     line-height: 12px;
-    background-color: $transparent-bg;
-    border: $border;
+    background-color: $badge-bg;
+    border: $badge-bg;
     margin-bottom: 5px;
     color: $white-color;
     border-radius: $border-radius-extreme;

@@ -1,5 +1,6 @@
 .abstract_view{
     margin-left: 0;
+    margin-bottom:$font-size-large-big;
     .card{
         font-weight: $font-weight-normal;
         margin: 0 0.8rem;
@@ -18,6 +19,11 @@
                 font-style: $font-size-h6;
                 border: 0 !important;
                 padding: $padding-tb;
+                overflow: hidden;
+                display: inline-block;
+                word-break: break-word;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
         }
     }
@@ -25,9 +31,13 @@
 
 @media screen and (max-width: 768px) {
     .abstract_view{
+            margin-bottom: 0;
         .card{
             margin-left: 0 !important;
             margin-bottom: $line-height-nav-link;
+        }
+        .list-group-item{
+            font-size: $font-size-large;
         }
     }
 }

@@ -15,11 +15,12 @@ small {
 }
 
 a {
-    color: $primary-color;
+    color: $default-color;
 
     &:hover,
     &:focus {
-        color: $primary-color;
+        color:$default-color ;
+        text-decoration: none;
     }
 }
 

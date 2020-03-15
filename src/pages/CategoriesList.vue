@@ -3,7 +3,7 @@
         <div class="section">
             <div class="container">
                 <div class="col-md-9 ml-auto col-xl-9 mr-auto float-left left-content">
-                    <archives-item :archives="archives"></archives-item>
+                    <categories-item-list :items="items"></categories-item-list>
                 </div>
                 <!-- Sidebar start -->
                 <div class="col-md-3 ml-auto col-xl-3 mr-auto float-right right-content">
@@ -16,20 +16,30 @@
 </template>
 <script>
     import VueMarkdown from 'vue-markdown'
-    import {Sidebar,ArchivesItem} from '@/components'
-    import {MockArchives} from '@/data'
+    import {Sidebar,CategoriesItemList} from '@/components'
+    import {MockArticles, MockCategoriesOne, MockCategoriesList} from '@/data'
 
     export default {
-        name: 'archives',
-        data() {
-            return {
-                archives: MockArchives
-            }
-        },
+        name: 'categories-list',
         components: {
+            CategoriesItemList,
             VueMarkdown,
             Sidebar,
-            ArchivesItem
+        },
+        data() {
+            return {
+                items: {},
+            }
+        },
+        created () {
+            const categoryName = this.$route.params.name;
+            console.log(categoryName);
+            for (let idx in MockCategoriesList) {
+                const current = MockCategoriesList[idx];
+                if (current.name === categoryName) {
+                    this.items = current;
+                }
+            }
         },
     };
 </script>

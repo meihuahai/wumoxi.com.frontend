@@ -1,5 +1,8 @@
 <template>
-    <navbar menu-classes="ml-auto" type="default">
+    <navbar
+        menu-classes="ml-auto"
+        type="default"
+    >
         <template slot-scope="{ toggle, isToggled }">
             <router-link class="navbar-brand" to="/" v-popover:popover1>
                 {{ Site }}
@@ -26,6 +29,7 @@
     const NavLinks = [
         {url: "/", description: "首 页", icon: "now-ui-icons ui-1_send", target: null, outside: false},
         {url: "/archives", description: "归 档", icon: "now-ui-icons shopping_tag-content", target: null, outside: false},
+        {url: "/categories", description: "分 类", icon: "now-ui-icons shopping_tag-content", target: null, outside: false},
         {url: "https://www.github.com/wumoxi", description: "Github", icon: "fab fa-github", target:"_blank", outside: true},
         {url: "/about", description: "关 于", icon: "now-ui-icons objects_support-17", target: null, outside: false},
     ];

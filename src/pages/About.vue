@@ -2,9 +2,9 @@
     <div class="info-page">
         <div class="section">
             <div class="container">
-                <div class="col-md-9 ml-auto col-xl-9 mr-auto float-left left-content">
-                    <div class="row left-row">
-                        <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
+                <div class="col-md-12 col-xl-12">
+                    <div class="row">
+                        <div class="jumbotron jumbotron-border bgshadow">
                             <div class="badge badge-primary badge-custom ">Golang</div>
                             <h3 class="reset-h3">Golang结构体使用</h3>
                             <div class="lead">
@@ -36,30 +36,6 @@
                         </div>
                     </div>
 
-                </div>
-                <div class="col-md-3 ml-auto col-xl-3 mr-auto float-right right-content">
-                    <div class="row">
-                        <div class="card bgshadow">
-                            <div class="card-header">
-                                目录
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Golang结构体使用</li>
-                                <li class="list-group-item">t事件可以将代码进行解</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                                <li class="list-group-item">Golang结构体使用</li>
-                                <li class="list-group-item">t事件可以将代码进行解</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                                <li class="list-group-item">Golang结构体使用</li>
-                                <li class="list-group-item">t事件可以将代码进行解</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                                <li class="list-group-item">Golang结构体使用</li>
-                                <li class="list-group-item">t事件可以将代码进行解</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

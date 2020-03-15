@@ -6,6 +6,9 @@ import Archives from './pages/Archives.vue';
 import About from './pages/About.vue';
 import Navbar from './layout/Navbar.vue';
 import Footer from './layout/Footer.vue';
+import Categories from './pages/Categories';
+import CategoriesList from './pages/CategoriesList';
+import Questions from './pages/Questions';
 
 Vue.use(Router);
 
@@ -43,6 +46,33 @@ export default new Router({
             path: '/about',
             name: 'about',
             components: {default: About, header: Navbar, footer: Footer},
+            props: {
+                header: {colorOnScroll: 400,},
+                footer: {backgroundColor: 'black'}
+            }
+        },
+        {
+            path: '/categories',
+            name: 'categories',
+            components: {default: Categories, header: Navbar, footer: Footer},
+            props: {
+                header: {colorOnScroll: 400,},
+                footer: {backgroundColor: 'black'}
+            }
+        },
+        {
+            path: '/categories/:name',
+            name: 'categories-list',
+            components: {default: CategoriesList, header: Navbar, footer: Footer},
+            props: {
+                header: {colorOnScroll: 400,},
+                footer: {backgroundColor: 'black'}
+            }
+        },
+        {
+            path: '/questions',
+            name: 'questions',
+            components: {default: Questions, header: Navbar, footer: Footer},
             props: {
                 header: {colorOnScroll: 400,},
                 footer: {backgroundColor: 'black'}

@@ -2,7 +2,9 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$sans-serif-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif !default;
+$sans-serif-family: 'pingfang SC', 'Helvetica Neue', Arial, sans-serif !default;
+$badge-bg:#e7e7e7;
+$badge-color:#262626;
 
 $none: 0 !default;
 $border-thin: 1px !default;
@@ -201,6 +203,8 @@ $padding-leftright:0 0.8rem;
 $padding-social-a: 10px 5px;
 $padding:0.5rem 1rem;
 $padding-tb:0.5rem  0;
+$padding-tbsm:0.3rem  0;
+$padding-left:0.5rem;
 $navbar-margin-a-btn: 15px 0px;
 $navbar-margin-a-btn-round: 16px 0px;
 

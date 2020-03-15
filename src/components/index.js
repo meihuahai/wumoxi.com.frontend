@@ -25,6 +25,9 @@ import ArticleItem from './ArticleItem.vue';
 import SidebarItem from './SidebarItem.vue';
 import Sidebar from './Sidebar.vue';
 import ButtonCounter from './ButtonCounter.vue';
+import ArchivesItem from './ArchivesItem.vue';
+import CategoriesItem from './CategoriesItem.vue';
+import CategoriesItemList from './CategoriesItemList.vue';
 
 import Pagination from './Pagination.vue';
 
@@ -54,4 +57,7 @@ export {
     SidebarItem,
     Sidebar,
     ButtonCounter,
+    ArchivesItem,
+    CategoriesItem,
+    CategoriesItemList
 };

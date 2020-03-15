@@ -2,10 +2,7 @@
     font-size: 1.05rem;
     text-align: justify;
 }
-.bgshadow{
-    background: rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.4);
-}
+
 
 .info-page {
     .left-content {
@@ -27,6 +24,7 @@
                 .reset-h3{
                     text-align: center;
                     margin-bottom: 0.5rem;
+                    font-size: $font-size-h4;
                 }
                 .lead{
                     line-height: $line-height-normal;
@@ -101,6 +99,10 @@
                 .jumbotron{
                     .lead{
                         line-height: $font-size-h3;
+                    }
+                    .reset-h3{
+                        text-align: left;
+                        font-size: $font-size-h5;
                     }
                 }
             }

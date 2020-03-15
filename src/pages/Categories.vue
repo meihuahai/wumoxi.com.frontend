@@ -3,7 +3,7 @@
         <div class="section">
             <div class="container">
                 <div class="col-md-9 ml-auto col-xl-9 mr-auto float-left left-content">
-                    <archives-item :archives="archives"></archives-item>
+                    <categories-item :items="items"></categories-item>
                 </div>
                 <!-- Sidebar start -->
                 <div class="col-md-3 ml-auto col-xl-3 mr-auto float-right right-content">
@@ -16,20 +16,20 @@
 </template>
 <script>
     import VueMarkdown from 'vue-markdown'
-    import {Sidebar,ArchivesItem} from '@/components'
-    import {MockArchives} from '@/data'
+    import {Sidebar,CategoriesItem} from '@/components'
+    import {MockCategories} from '@/data'
 
     export default {
-        name: 'archives',
+        name: 'categories',
         data() {
             return {
-                archives: MockArchives
+                items: MockCategories
             }
         },
         components: {
             VueMarkdown,
             Sidebar,
-            ArchivesItem
+            CategoriesItem
         },
     };
 </script>

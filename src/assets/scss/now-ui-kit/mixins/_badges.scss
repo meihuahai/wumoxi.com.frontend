@@ -3,8 +3,8 @@
     &,
     &[href]:focus,
     &[href]:hover {
-        border-color: $color;
-        background-color: $color;
-        color: $white-color;
+        border-color: $badge-bg;
+        background-color: $badge-bg;
+        color: $badge-color;
     }
 }
