@@ -1,11 +1,12 @@
 <template>
     <div class="info-page">
+        <vue-topprogress ref="topProgress" color="red"></vue-topprogress>
         <div class="section">
             <div class="container">
                 <div class="col-md-9 ml-auto col-xl-9 mr-auto float-left left-content">
                     <div class="row left-row" v-if="article !== {}">
                         <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
-                            <div class="badge badge-primary badge-custom ">{{ article.category }}</div>
+                            <div class="badge badge-primary badge-custom ">{{ article.category.name }}</div>
                             <h3 class="reset-h3">{{ article.title }}</h3>
                             <div class="lead">
                                 <span class="pull-left">
@@ -21,11 +22,11 @@
                             </div>
                             <div class="clearfix"></div>
                             <span>
-                                 <span class="badge badge-success">Golang</span>
+                                 <span v-for="label in article.labels" :key="label.id" class="badge badge-success">{{ label.name }}</span>
                             </span>
                             <div>
-                                <vue-markdown :source="article.summary"></vue-markdown>
-                                <vue-markdown :source="article.content" @rendered="markdown"></vue-markdown>
+                                <vue-markdown v-if="summaryLoaded">{{ article.summary }}</vue-markdown>
+                                <vue-markdown v-if="contentLoaded"> {{ article.content }} </vue-markdown>
                             </div>
                             <hr>
                         </div>
@@ -40,33 +41,76 @@
 </template>
 
 <script>
+    // import "prismjs/prism";
+    // import "prismjs/themes/prism-dark.css"
     import {Sidebar} from '@/components'
-    import {MockArticles} from "@/data";
+    import {getArticleByID} from "@/api/article";
 
     export default {
-        name: 'info',
         data() {
             return {
-                article: {},
+                summaryLoaded: false,
+                contentLoaded: false,
+                id: 0,
+                article: {
+                    name: '',
+                    category: {
+                        name: ''
+                    },
+                    summary: '',
+                    content: ''
+                },
                 show: true
             }
         },
         components: {
             Sidebar
         },
-        mounted () {
-            const id = this.$route.params.id;
-            this.article = MockArticles[id-1];
-        },
-        watch: {
-            article: function (newArticle, oldArticle) {
-                console.log(newArticle, oldArticle);
-            }
+        created() {
+            // this.getArticleHandle();
         },
         methods: {
-            markdown(e) {
-
+            getArticleHandle() {
+                let id = this.$route.params.id;
+                if (id !== undefined && !isNaN(parseInt(id))) {
+                    if (this.id) {
+                        id = this.id
+                    }
+                    getArticleByID(id).then(response => {
+                        this.article = response.data;
+                        this.summaryLoaded = true;
+                        this.contentLoaded = true;
+                        this.$refs.topProgress.done();
+                    });
+                }
             }
+        },
+        beforeRouteEnter(to, from, next) {
+            let id = to.params.id;
+            if (id !== undefined && !isNaN(parseInt(id))) {
+                getArticleByID(id).then(response => {
+                    next(vm => {
+                        vm.article = response.data;
+                        vm.summaryLoaded = true;
+                        vm.contentLoaded = true;
+                    });
+                });
+            }
+        },
+        // Ref: https://blog.csdn.net/xiaomajia029/article/details/96324558
+        beforeRouteUpdate (to, from, next) {
+            // 做一些想要做的处理...
+            // this.errCode = to.params.code
+            // this.info = formatErrorMsg(this.errCode)
+            this.$refs.topProgress.start();
+            this.summaryLoaded = false;
+            this.contentLoaded = false;
+            this.id = to.params.id;
+            this.getArticleHandle();
+            next()  // 一定要有next
+        },
+        mounted() {
+
         }
     };
 

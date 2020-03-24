@@ -1,5 +1,5 @@
 <template>
-    <navbar
+    <navbar ref="navbar"
         menu-classes="ml-auto"
         type="default"
     >
@@ -30,6 +30,7 @@
         {url: "/", description: "首 页", icon: "now-ui-icons ui-1_send", target: null, outside: false},
         {url: "/archives", description: "归 档", icon: "now-ui-icons shopping_tag-content", target: null, outside: false},
         {url: "/categories", description: "分 类", icon: "now-ui-icons shopping_tag-content", target: null, outside: false},
+        {url: "/labels", description: "标 签", icon: "now-ui-icons shopping_tag-content", target: null, outside: false},
         {url: "https://www.github.com/wumoxi", description: "Github", icon: "fab fa-github", target:"_blank", outside: true},
         {url: "/about", description: "关 于", icon: "now-ui-icons objects_support-17", target: null, outside: false},
     ];
@@ -43,10 +44,32 @@
         },
         data() {
             return {
-                "Site": "武沫汐",
-                "links": NavLinks,
+                Site: "武沫汐",
+                links: NavLinks,
+                navbarHeight:'',
+                footerHeight:''
             }
         },
+        mounted() {
+            this.getNavbarHeight();
+        },
+        methods: {
+            getNavbarHeight() {
+                  this.navbarHeight = this.$refs.navbar.clientHeight
+            },
+            changePageHeight() {
+                this.$refs.boss.style.height = this.clientHeight + 'px';
+            },
+            initPageHeight() {
+                this.clientHeight = this.getPageViewHeight();
+                window.onresize = () => {
+                    this.clientHeight = this.getPageViewHeight();
+                }
+            },
+            getPageViewHeight() {
+                return document.body.offsetHeight || document.body.clientHeight
+            }
+        }
     };
 </script>
 

@@ -14,6 +14,14 @@ module.exports = {
                 libraryName: 'element-ui',
                 styleLibraryName: 'theme-chalk'
             }
+        ],
+        [
+            "prismjs", {
+                "languages": ["javascript", "css", "markup", "go", "json", "jsonp"],
+                "plugins": ["line-numbers"],
+                "theme": "dark",
+                "css": true
+            }
         ]
     ]
 };

@@ -2,13 +2,13 @@
     <div class="info-page">
         <div class="section">
             <div class="container">
-                <div class="col-md-9 ml-auto col-xl-9 mr-auto float-left left-content">
+                <div class="col-md-12 ml-auto col-xl-12 mr-auto float-left left-content">
                     <archives-item :archives="archives"></archives-item>
                 </div>
                 <!-- Sidebar start -->
-                <div class="col-md-3 ml-auto col-xl-3 mr-auto float-right right-content">
+                <!--<div class="col-md-3 ml-auto col-xl-3 mr-auto float-right right-content">
                     <sidebar></sidebar>
-                </div>
+                </div>-->
                 <!-- Sidebar end -->
             </div>
         </div>
@@ -17,13 +17,13 @@
 <script>
     import VueMarkdown from 'vue-markdown'
     import {Sidebar,ArchivesItem} from '@/components'
-    import {MockArchives} from '@/data'
+    import {getArticleArchives} from "@/api/article";
 
     export default {
         name: 'archives',
         data() {
             return {
-                archives: MockArchives
+                archives: []
             }
         },
         components: {
@@ -31,6 +31,16 @@
             Sidebar,
             ArchivesItem
         },
+        created() {
+            this.getArticleArchivesHandle();
+        },
+        methods: {
+            getArticleArchivesHandle() {
+                getArticleArchives().then(response => {
+                    this.archives = response.data;
+                })
+            }
+        }
     };
 </script>
 <style>

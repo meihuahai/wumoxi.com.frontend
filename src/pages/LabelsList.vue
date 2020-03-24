@@ -3,26 +3,20 @@
         <div class="section">
             <div class="container">
                 <div class="col-md-12 ml-auto col-xl-12 mr-auto float-left left-content">
-                    <categories-item-list v-if="itemsLoaded" :items="items"></categories-item-list>
+                    <labels-item-list v-if="itemsLoaded" :items="items"></labels-item-list>
                 </div>
-                <!-- Sidebar start -->
-                <!--<div class="col-md-3 ml-auto col-xl-3 mr-auto float-right right-content">
-                    <sidebar></sidebar>
-                </div>-->
-                <!-- Sidebar end -->
             </div>
         </div>
     </div>
 </template>
 <script>
     import VueMarkdown from 'vue-markdown'
-    import {Sidebar,CategoriesItemList} from '@/components'
-    import {getCategoryArticlesDetail} from "@/api/category";
-
+    import {Sidebar, LabelsItemList} from '@/components'
+    import {getLabelArticlesDetail} from "@/api/label";
     export default {
-        name: 'categories-list',
+        name: 'labels-list',
         components: {
-            CategoriesItemList,
+            LabelsItemList,
             VueMarkdown,
             Sidebar,
         },
@@ -33,27 +27,12 @@
             }
         },
         created () {
-            this.getCategoryArticlesDetailHandle();
+            this.getLabelArticlesDetailHandle();
         },
-        // beforeRouteEnter(to, from, next) {
-        //     const name = to.params.name;
-        //     if (name !== undefined) {
-        //         getCategoryArticlesDetail(name).then(response => {
-        //             next(vm => {
-        //                 vm.items = response.data;
-        //                 vm.itemsLoaded = true;
-        //             })
-        //         }).catch(() => {
-        //             this.$router.push('404')
-        //         })
-        //     } else {
-        //         console.log('get article detail error');
-        //     }
-        // },
         methods: {
-            getCategoryArticlesDetailHandle() {
+            getLabelArticlesDetailHandle() {
                 this.itemsLoaded = false;
-                getCategoryArticlesDetail(this.$route.params.name).then(response => {
+                getLabelArticlesDetail(this.$route.params.name).then(response => {
                     this.items = response.data;
                     this.itemsLoaded = true;
                     console.log(this.items);
@@ -67,9 +46,7 @@
             // 做一些想要做的处理...
             // this.errCode = to.params.code
             // this.info = formatErrorMsg(this.errCode)
-            this.summaryLoaded = false;
-            this.contentLoaded = false;
-            this.getCategoryArticlesDetailHandle();
+            this.getLabelArticlesDetailHandle();
             next()  // 一定要有next
         },
     };

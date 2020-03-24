@@ -1,11 +1,11 @@
 <template>
     <div class="row archives-item">
         <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
-            <div class="badge badge-primary badge-custom ">分类: {{ items.category }}</div>
+            <div class="badge badge-primary badge-custom ">标签: {{ items.label }}</div>
             <div class="container">
                 <div class="col-md-12 col-xl-12 archive-post">
                     <router-link class="archive-item" v-for="it in items.items" :key="it.id" :to="{name: 'info', params: {id: it.id}, query: {r: Math.ceil(Math.random()*100)}}">
-                        <span>{{it.data}}</span>
+                        <span>{{it.date}}</span>
                         {{it.title}}
                     </router-link>
                 </div>
@@ -16,7 +16,7 @@
 
 <script>
     export default {
-        name: "categories-item-list",
+        name: "labels-item-list",
         props: {
             items: [Object],
         },

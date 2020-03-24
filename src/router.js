@@ -7,6 +7,9 @@ import About from './pages/About.vue';
 import Navbar from './layout/Navbar.vue';
 import Footer from './layout/Footer.vue';
 import Categories from './pages/Categories';
+import Labels from './pages/labels';
+import LabelsList from './pages/LabelsList';
+import NotFound from './pages/404';
 import CategoriesList from './pages/CategoriesList';
 import Questions from './pages/Questions';
 
@@ -14,6 +17,15 @@ Vue.use(Router);
 
 export default new Router({
     routes: [
+        {
+            path: '/404',
+            name: '404',
+            components: {default: NotFound, header: Navbar, footer: Footer},
+            props: {
+                header: {colorOnScroll: 400},
+                footer: {backgroundColor: 'black'}
+            }
+        },
         {
             path: '/',
             name: 'index',
@@ -28,6 +40,26 @@ export default new Router({
             path: '/info/:id',
             name: 'info',
             components: {default: Info, header: Navbar, footer: Footer},
+            props: {
+                header: {colorOnScroll: 400,},
+                footer: {backgroundColor: 'black'}
+            }
+        },
+        {
+            // use vue router dynamic segment.
+            path: '/labels',
+            name: 'labels',
+            components: {default: Labels, header: Navbar, footer: Footer},
+            props: {
+                header: {colorOnScroll: 400,},
+                footer: {backgroundColor: 'black'}
+            }
+        },
+        {
+            // use vue router dynamic segment.
+            path: '/labels/:name',
+            name: 'labels-list',
+            components: {default: LabelsList, header: Navbar, footer: Footer},
             props: {
                 header: {colorOnScroll: 400,},
                 footer: {backgroundColor: 'black'}
@@ -78,6 +110,12 @@ export default new Router({
                 footer: {backgroundColor: 'black'}
             }
         },
+        // Ref: https://stackoverflow.com/questions/45619407/how-to-create-a-404-component-in-vuejs-using-vue-router
+        {
+            path: '*',
+            redirect: '/404',
+            hidden: true
+        }
     ],
     scrollBehavior: to => {
         if (to.hash) {

@@ -15,6 +15,8 @@
 
  */
 import Vue from 'vue';
+import {Message, Progress} from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue';
 // You can change this import to `import router from './starterRouter'` to quickly start development from a blank layout.
 // import router from './exampleRouter';
@@ -24,7 +26,12 @@ Vue.component('vue-markdown', VueMarkdown);
 import NowUiKit from './plugins/now-ui-kit';
 import FontAwesome from './plugins/font-awesome';
 import PrismJS from './plugins/prism';
-
+import vueTopprogress from 'vue-top-progress'
+Vue.use(vueTopprogress);
+import VueWordCloud from 'vuewordcloud';
+Vue.component(VueWordCloud.name, VueWordCloud);
+Vue.component(Progress.name, Progress);
+Vue.prototype.$message = Message;
 Vue.config.productionTip = false;
 Vue.use(PrismJS);
 Vue.use(NowUiKit);

@@ -28,6 +28,7 @@ import ButtonCounter from './ButtonCounter.vue';
 import ArchivesItem from './ArchivesItem.vue';
 import CategoriesItem from './CategoriesItem.vue';
 import CategoriesItemList from './CategoriesItemList.vue';
+import LabelsItemList from "@/components/LabelsItemList";
 
 import Pagination from './Pagination.vue';
 
@@ -59,5 +60,6 @@ export {
     ButtonCounter,
     ArchivesItem,
     CategoriesItem,
-    CategoriesItemList
+    CategoriesItemList,
+    LabelsItemList
 };

@@ -2,22 +2,18 @@
     <div class="info-page">
         <div class="section">
             <div class="container">
-                <div class="col-md-9 ml-auto col-xl-9 mr-auto float-left left-content">
+                <div class="col-md-12 ml-auto col-xl-12 mr-auto float-left left-content">
                     <categories-item :items="items"></categories-item>
                 </div>
-                <!-- Sidebar start -->
-                <div class="col-md-3 ml-auto col-xl-3 mr-auto float-right right-content">
-                    <sidebar></sidebar>
-                </div>
-                <!-- Sidebar end -->
             </div>
         </div>
     </div>
 </template>
 <script>
     import VueMarkdown from 'vue-markdown'
-    import {Sidebar,CategoriesItem} from '@/components'
+    import {CategoriesItem} from '@/components'
     import {MockCategories} from '@/data'
+    import {getCategoryArticlesList} from "@/api/category";
 
     export default {
         name: 'categories',
@@ -28,8 +24,17 @@
         },
         components: {
             VueMarkdown,
-            Sidebar,
             CategoriesItem
+        },
+        created() {
+            this.getCategoryArticlesListHandle();
+        },
+        methods: {
+            getCategoryArticlesListHandle() {
+                getCategoryArticlesList().then(response => {
+                    this.items = response.data;
+                })
+            }
         },
     };
 </script>

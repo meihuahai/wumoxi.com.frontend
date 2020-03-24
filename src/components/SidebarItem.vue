@@ -5,7 +5,14 @@
                 {{ title }}
             </div>
             <ul  class="list-group list-group-flush">
-                <li class="list-group-item" v-for="item in items" :key="item.id">{{ item.title || item.name }}</li>
+
+                <li class="list-group-item" v-for="item in items" :key="item.id">
+                    <router-link :to="{name: routeName, params: {id: item.id}}">
+                        {{ item.title || item.name }}
+                        {{ item.id }}
+                        {{ routeName }}
+                    </router-link>
+                </li>
             </ul>
         </div>
     </div>
@@ -13,12 +20,13 @@
 
 <script>
     export default {
-        name: "abstract-view",
+        name: "sidebar-item",
         props: {
             title: {
                 type:String,
                 default: "列表视图"
             },
+            routeName: String,
             items: {
                 type: Array,
                 default: function () {
@@ -29,6 +37,12 @@
                 }
             },
         },
+        methods: {
+
+        },
+        mounted() {
+            console.log(this.routeName);
+        }
     }
 </script>
 
