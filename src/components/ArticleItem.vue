@@ -3,7 +3,9 @@
         <router-link class="article-item-link" :to="{name: 'info', params: {id: article.id}}">
             <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
                 <!-- 分类 -->
-                <div class="badge badge-primary badge-custom ">{{ article.category.name }}</div>
+                <router-link :to="{name: 'categories-list', params: { name: article.category.name } }">
+                    <div class="badge badge-primary badge-custom ">{{ article.category.name }}</div>
+                </router-link>
 
                 <!-- 文章标题 -->
                 <h3 class="reset-h3">{{ article.title }}</h3>

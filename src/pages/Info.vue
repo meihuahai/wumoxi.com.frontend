@@ -6,7 +6,9 @@
                 <div class="col-md-9 ml-auto col-xl-9 mr-auto float-left left-content">
                     <div class="row left-row" v-if="article !== {}">
                         <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
-                            <div class="badge badge-primary badge-custom ">{{ article.category.name }}</div>
+                            <router-link :to="{ name: 'categories-list', params: { name: article.category.name } }">
+                                <div class="badge badge-primary badge-custom ">{{ article.category.name }}</div>
+                            </router-link>
                             <h3 class="reset-h3">{{ article.title }}</h3>
                             <div class="lead">
                                 <span class="pull-left">
@@ -22,7 +24,9 @@
                             </div>
                             <div class="clearfix"></div>
                             <span>
-                                 <span v-for="label in article.labels" :key="label.id" class="badge badge-success">{{ label.name }}</span>
+                                <router-link v-for="label in article.labels" :key="label.id"  :to="{ name: 'labels-list', params: { name: label.name } }">
+                                    <span class="badge badge-success">{{ label.name }}</span>
+                                </router-link>
                             </span>
                             <div>
                                 <vue-markdown v-if="summaryLoaded">{{ article.summary }}</vue-markdown>
@@ -41,8 +45,19 @@
 </template>
 
 <script>
-    // import "prismjs/prism";
-    // import "prismjs/themes/prism-dark.css"
+    // Ref: https://github.com/search?utf8=%E2%9C%93&q=import+Prism+from+%27prismjs%27+extension%3Avue&type=Code&ref=advsearch&l=&l=
+    // Prism
+    import 'prismjs'
+    import 'prismjs/components/prism-bash.js'
+    import 'prismjs/components/prism-css.js'
+    import 'prismjs/components/prism-javascript.js'
+    import 'prismjs/components/prism-json.js'
+    import 'prismjs/components/prism-stylus.js'
+    import 'prismjs/components/prism-typescript.js'
+    import 'prismjs/components/prism-sass.js'
+    import 'prismjs/components/prism-scss.js'
+    import '@/assets/scss/prims.scss'
+
     import {Sidebar} from '@/components'
     import {getArticleByID} from "@/api/article";
 
@@ -110,7 +125,10 @@
             next()  // 一定要有next
         },
         mounted() {
-
+            Prism.highlightAll();
+        },
+        updated() {
+            Prism.highlightAll();
         }
     };
 

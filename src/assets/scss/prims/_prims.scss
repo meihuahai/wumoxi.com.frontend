@@ -6,7 +6,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-    color: $font-color;
+    color: $font-markdown-color;
     background: none;
     text-shadow: 0 1px white;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -27,18 +27,19 @@ pre[class*="language-"] {
     -ms-hyphens: none;
     hyphens: none;
     border-radius: 0.25rem;
+    border: none;
 }
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
     text-shadow: none;
-    background: $font-color-keyword;
+    background: $font-markdown-color-keyword;
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
     text-shadow: none;
-    background: $font-color-keyword;
+    background: $font-markdown-color-keyword;
 }
 
 @media print {
@@ -58,7 +59,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
     background: rgba(245, 242, 240, 0.5);
-    -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
 }
 
@@ -73,11 +74,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: $font-color-comment;
+    color: $font-markdown-color-comment;
 }
 
 .token.punctuation {
-    color: $font-color-punctuation;
+    color: $font-markdown-color-punctuation;
 }
 
 .token.namespace {
@@ -91,7 +92,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-    color: $font-color-property;
+    color: $font-markdown-color-property;
 }
 
 .token.selector,
@@ -100,7 +101,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-    color: $font-color-str;
+    color: $font-markdown-color-str;
 }
 
 .token.operator,
@@ -108,29 +109,29 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-    color: $font-color-operator;
+    color: $font-markdown-color-operator;
     font-weight: bold;
     // background: hsla(0, 0%, 100%, .5);
 }
 .token.operator {
-    color: $font-color-pointer;
+    color: $font-markdown-color-pointer;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-    color: $font-color-attr;
+    color: $font-markdown-color-attr;
 }
 
 .token.function,
 .token.class-name {
-    color: $font-color-function;
+    color: $font-markdown-color-function;
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-    color: $font-color-regex;
+    color: $font-markdown-color-regex;
 }
 
 .token.important,
@@ -164,4 +165,5 @@ h5, .h5{
 }
 p{
     font-size: $font-size-blockquote;
+    font-weight: $font-weight-normal;
 }

@@ -1,6 +1,5 @@
 // import prism reference: https://github.com/search?utf8=%E2%9C%93&q=import+Prism+from+%27prismjs%27+extension%3Avue&type=Code&ref=advsearch&l=&l=
 import Prism from 'prismjs';
-import '@/assets/scss/prims.scss';
 import 'prismjs/components/prism-go.min';
 import 'prismjs/components/prism-docker.min';
 import 'prismjs/components/prism-nginx.min';
@@ -18,6 +17,7 @@ import 'prismjs/components/prism-markdown.min';
 import 'prismjs/components/prism-markup'
 import 'prismjs/components/prism-markup-templating'
 import 'prismjs/components/prism-php.min';
+import '@/assets/scss/prims.scss';
 
 
 console.log("prism is called!");

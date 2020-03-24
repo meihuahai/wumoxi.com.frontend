@@ -22,18 +22,17 @@ import App from './App.vue';
 // import router from './exampleRouter';
 import router from './router';
 import VueMarkdown from 'vue-markdown'
-Vue.component('vue-markdown', VueMarkdown);
 import NowUiKit from './plugins/now-ui-kit';
 import FontAwesome from './plugins/font-awesome';
-import PrismJS from './plugins/prism';
-import vueTopprogress from 'vue-top-progress'
-Vue.use(vueTopprogress);
+import TopProgress from 'vue-top-progress'
 import VueWordCloud from 'vuewordcloud';
+
 Vue.component(VueWordCloud.name, VueWordCloud);
 Vue.component(Progress.name, Progress);
+Vue.component('vue-markdown', VueMarkdown);
 Vue.prototype.$message = Message;
 Vue.config.productionTip = false;
-Vue.use(PrismJS);
+Vue.use(TopProgress);
 Vue.use(NowUiKit);
 Vue.use(FontAwesome);
 
