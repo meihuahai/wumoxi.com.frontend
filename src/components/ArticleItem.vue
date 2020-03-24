@@ -33,7 +33,7 @@
                     <!-- 文章属性信息 -->
                     <span class="pull-right">
                         <span class="fa fa-comment"> <b>{{ article.comment }}</b> </span>
-                        <span class="fa fa-eye"> <b>{{ article.view }}</b> </span>
+                        <span class="fa fa-eye"> <b>{{ article.visit }}</b> </span>
                         <span class="fa fa-thumbs-up"> <b>{{ article.like }}</b> </span>
                     </span>
                 </div>

@@ -3,7 +3,7 @@ import router from "@/router";
 
 // Create an axios instance.
 const service = axios.create({
-    baseURL: 'http://127.0.0.1:9963',
+    baseURL: process.env.VUE_APP_BASH_API,
     timeout: 5000
 });
 

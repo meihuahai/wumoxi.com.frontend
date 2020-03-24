@@ -14,7 +14,7 @@
             <div class="bullshit__headline">{{ message }}</div>
             <div class="bullshit__info">{{ detail }}
             </div>
-            <div>
+            <div class="btn-group">
                 <a @click="returnBackHandle" class="bullshit__return-home">后退</a>
                 <a @click="returnHomeHandle" class="bullshit__return-home">返回首页</a>
             </div>
@@ -70,6 +70,8 @@ export default {
             top: 50%;
             left:50%;
             transform: translateX(-50%) translateY(-50%);
+            display: flex;
+            justify-content: center;
             .pic-404 {
                 position: relative;
                 float: left;
@@ -264,18 +266,30 @@ export default {
         }
         }
     }
-    /*@media (min-width: 576px){
+    @media (min-width: 576px){
         .wscn-http404{
             width: 90%;
         }
     }
     @media screen and (max-width: 768px){
-        .wscn-http404{
-            width: 90%;
+        .wrapper{
+            position: relative;
+            .wscn-http404 {
+               width: 90%;
+                .pic-404 {
+                    float: none;
+                    width: 100%;
+                }
+                .bullshit{
+                    .btn-group{
+                        overflow: hidden;
+                        text-align: center;
+                        clear: both;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
         }
-        .pic-404{
-            width: 100%;
-
-        }
-    }*/
+    }
 </style>

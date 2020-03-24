@@ -4,7 +4,9 @@
         <div class="section">
             <div class="container">
                 <div class="col-md-12 ml-auto col-xl-12 mr-auto">
-                    <div style="height: 100%; width: 100%; position: relative; top: 0; left: 0; background-color: red; margin-top: 10rem;">
+                    <h3 class="label-count">共计100个标签</h3>
+<!--                    <div style="height: 100%; width: 100%; position: relative; top: 0; left: 0; background-color: red; margin-top: 10rem;">-->
+                        <div style=" width: 100%; position: relative; top: 0; left: 0; background-color: red; margin-top:5rem;">
                         <div :style="(progressVisible && progress)
 								? {
 									filter: 'blur(8px)',
@@ -26,6 +28,7 @@
                                 <template slot-scope="props">
                                     <div
                                         slot="activator"
+                                        class="label-txt"
                                         style="cursor: pointer;"
                                         @click="onWordClick(props.word)"
                                     >{{ props.text }}</div>
@@ -124,6 +127,23 @@
     };
 </script>
 <style>
+    .label-count{
+        text-align: center;
+        text-decoration: underline;
+    }
+    .label-txt{
+        transition:all 1s ease-out;
+        -webkit-transition: all 1s ease-out;
+        -moz-transition: all 1s ease-out;
+    }
+    .label-txt:hover{
+        transform:scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        transition:all 1s ease-out;
+        -webkit-transition: all 1s ease-out;
+        -moz-transition: all 1s ease-out;
+    }
     .word-completed-progress{
         position: fixed;
         left: 50%;

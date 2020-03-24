@@ -13,7 +13,7 @@
                             <div class="lead">
                                 <span class="pull-left">
                                     <span class="oi oi-timer">
-                                        <b>{{ article.date }}</b>
+                                        <b>{{ article.created_at }}</b>
                                     </span>
                                 </span>
                                 <span class="pull-right">
