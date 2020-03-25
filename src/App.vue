@@ -1,14 +1,17 @@
 <template>
     <div id="app" v-cloak>
-        <vue-topprogress ref="topProgress" color="red"></vue-topprogress>
         <router-view name="header"/>
         <div class="wrapper">
+            <el-backtop :visibility-height="100" class="backtop" :bottom="100" :right="15">
+                <el-icon class="backtop-icon" name="caret-top"></el-icon>
+            </el-backtop>
             <router-view/>
         </div>
         <router-view name="footer"/>
     </div>
 </template>
 <script>
+    import {marked} from "@/utils/mark";
     export default {
         data() {
             return {
@@ -16,22 +19,9 @@
             }
         },
         watch: {
-            // '$route'(to, from) {
-            //     if (to.path.indexOf('/info/')  === 0) {
-            //         this.$router.go(0);
-            //     }
-            // }
             clientHeight() {
                 this.changePageHeight()
             }
-        },
-        mounted () {
-            this.$refs.topProgress.start();
-
-            // Use setTimeout for demo
-            setTimeout(() => {
-                this.$refs.topProgress.done()
-            }, 2000);
         },
         methods: {
             changePageHeight() {
@@ -46,15 +36,28 @@
             getPageViewHeight() {
                 return document.body.offsetHeight || document.body.clientHeight
             }
+        },
+        mounted() {
+            if (process.env.VUE_APP_SHOW_MARK) {
+                marked();
+            }
         }
     };
 </script>
 
-<style>
+<style scoped>
     [v-cloak] {
         display: none !important;
     }
     html,body,#app{
-        min-height:100vh
+        min-height:100vh;
+    }
+    .backtop {
+        background: rgba(255, 255, 255, 0.5);
+        -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
+    }
+    .backtop-icon {
+        color: #2c2c2c;
     }
 </style>

@@ -4,9 +4,8 @@
         <div class="section">
             <div class="container">
                 <div class="col-md-12 ml-auto col-xl-12 mr-auto">
-                    <h3 class="label-count">共计100个标签</h3>
-<!--                    <div style="height: 100%; width: 100%; position: relative; top: 0; left: 0; background-color: red; margin-top: 10rem;">-->
-                        <div style=" width: 100%; position: relative; top: 0; left: 0; background-color: red; margin-top:5rem;">
+                    <h3 class="label-count">共计{{ count }}个标签</h3>
+                        <div style="width: 100%; position: relative; top: 0; left: 0; background-color: red; margin-top:5rem;">
                         <div :style="(progressVisible && progress)
 								? {
 									filter: 'blur(8px)',
@@ -73,10 +72,6 @@
         created() {
             this.handleGetLabelAll();
         },
-        beforeRouteUpdate(to, from, next) {
-            console.log(to.params.name);
-            this.$router.push()
-        },
         methods: {
             onWordClick: function(word) {
                 this.$router.push({name: 'labels-list', params: {name: word[0]}} )
@@ -123,6 +118,9 @@
             animationDuration: function() {
                 return this.animationDurationValues[this.animationDurationValueIndex];
             },
+            count() {
+                return this.words.length;
+            }
         }
     };
 </script>

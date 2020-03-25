@@ -4,7 +4,7 @@
             <div class="badge badge-primary badge-custom ">分类: {{ items.category }}</div>
             <div class="container">
                 <div class="col-md-12 col-xl-12 archive-post">
-                    <router-link class="archive-item" v-for="it in items.items" :key="it.id" :to="{name: 'info', params: {id: it.id}, query: {r: Math.ceil(Math.random()*100)}}">
+                    <router-link class="archive-item" v-for="it in items.items" :key="it.id" :to="{name: 'info', params: {id: it.id}}">
                         <span>{{it.data}}</span>
                         {{it.title}}
                     </router-link>

@@ -35,9 +35,6 @@
                 getLabelArticlesDetail(this.$route.params.name).then(response => {
                     this.items = response.data;
                     this.itemsLoaded = true;
-                    console.log(this.items);
-                    console.log(response.data);
-                    console.log(response.data.length);
                 })
             }
         },

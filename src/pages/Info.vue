@@ -1,12 +1,14 @@
 <template>
     <div class="info-page">
         <vue-topprogress ref="topProgress" color="red"></vue-topprogress>
+        <!-- Backtop -->
+        <el-backtop :visibility-height="10" target=".wrapper"></el-backtop>
         <div class="section">
             <div class="container">
                 <div class="col-md-9 ml-auto col-xl-9 mr-auto float-left left-content">
                     <div class="row left-row" v-if="article !== {}">
                         <div class="jumbotron jumbotron-border bgshadow" style="position: relative; width: 100%;">
-                            <router-link :to="{ name: 'categories-list', params: { name: article.category.name } }">
+                            <router-link v-if="article.category.name !== ''" :to="{ name: 'categories-list', params: { name: article.category.name } }">
                                 <div class="badge badge-primary badge-custom ">{{ article.category.name }}</div>
                             </router-link>
                             <h3 class="reset-h3">{{ article.title }}</h3>
@@ -45,19 +47,6 @@
 </template>
 
 <script>
-    // Ref: https://github.com/search?utf8=%E2%9C%93&q=import+Prism+from+%27prismjs%27+extension%3Avue&type=Code&ref=advsearch&l=&l=
-    // Prism
-    import 'prismjs'
-    import 'prismjs/components/prism-bash.js'
-    import 'prismjs/components/prism-css.js'
-    import 'prismjs/components/prism-javascript.js'
-    import 'prismjs/components/prism-json.js'
-    import 'prismjs/components/prism-stylus.js'
-    import 'prismjs/components/prism-typescript.js'
-    import 'prismjs/components/prism-sass.js'
-    import 'prismjs/components/prism-scss.js'
-    import '@/assets/scss/prims.scss'
-
     import {Sidebar} from '@/components'
     import {getArticleByID} from "@/api/article";
 
@@ -125,10 +114,10 @@
             next()  // 一定要有next
         },
         mounted() {
-            Prism.highlightAll();
+            this.$prism.highlightAll();
         },
         updated() {
-            Prism.highlightAll();
+            this.$prism.highlightAll();
         }
     };
 

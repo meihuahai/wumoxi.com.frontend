@@ -11,7 +11,7 @@
                         class="archive-item"
                         v-for="item in archive.items"
                         :key="item.id"
-                        :to="{name: 'info', params: {id: item.id}, query: {r: Math.ceil(Math.random()*100)}}"
+                        :to="{name: 'info', params: {id: item.id}}"
                     >
                         <span>{{item.date}}</span> {{item.title}}
                     </router-link>

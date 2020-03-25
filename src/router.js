@@ -16,6 +16,7 @@ import Questions from './pages/Questions';
 Vue.use(Router);
 
 export default new Router({
+    linkExactActiveClass: 'active',
     routes: [
         {
             path: '/404',

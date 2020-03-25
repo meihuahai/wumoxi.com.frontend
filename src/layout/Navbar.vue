@@ -1,7 +1,9 @@
 <template>
-    <navbar ref="navbar"
+    <navbar
+        ref="navbar"
         menu-classes="ml-auto"
-        type="default"
+        type="primary"
+        meum-classes="lm-auto"
     >
         <template slot-scope="{ toggle, isToggled }">
             <router-link class="navbar-brand" to="/" v-popover:popover1>
@@ -24,7 +26,7 @@
 </template>
 
 <script>
-    import {DropDown, NavbarToggleButton, Navbar} from '@/components';
+    import {DropDown, NavbarToggleButton, Navbar, NavLink} from '@/components';
     import {Popover} from 'element-ui';
     const NavLinks = [
         {url: "/", description: "首 页", icon: "now-ui-icons ui-1_send", target: null, outside: false},
@@ -36,7 +38,12 @@
     ];
     export default {
         name: 'main-navbar',
+        props: {
+            transparent: Boolean,
+            colorOnScroll: Number,
+        },
         components: {
+            NavLink,
             DropDown,
             Navbar,
             NavbarToggleButton,

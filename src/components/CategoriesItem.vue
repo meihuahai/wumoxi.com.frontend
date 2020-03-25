@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="col-md-12 col-xl-12 archive-post">
                     <div>
-                        <router-link class="archive-item" v-for="it in item.items" :key="it.id" :to="{name: 'info', params: {id: it.id}, query: {r: Math.ceil(Math.random()*100)}}">
+                        <router-link class="archive-item" v-for="it in item.items" :key="it.id" :to="{name: 'info', params: {id: it.id}}">
                             <span>{{it.date}}</span>
                             {{it.title}}
                         </router-link>

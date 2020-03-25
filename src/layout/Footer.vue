@@ -36,9 +36,6 @@
                 beians: process.env.VUE_APP_FOOTER_BEIAN.split(","),
                 beianUrl: process.env.VUE_APP_FOOTER_BEIAN_URL,
             };
-        },
-        created() {
-            console.log(this.beians)
         }
     };
 </script>

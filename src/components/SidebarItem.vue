@@ -35,13 +35,7 @@
                         {id: 2, name: "TEST1"}
                     ];
                 }
-            },
-        },
-        methods: {
-
-        },
-        mounted() {
-            console.log(this.routeName);
+            }
         }
     }
 </script>

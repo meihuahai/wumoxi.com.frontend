@@ -39,9 +39,7 @@
         mounted() {
             getArticleListPaging(this.query).then(response => {
                 this.articles = response.data;
-            }).then((error) => {
-                console.log(error);
-            })
+            });
         }
     };
 </script>

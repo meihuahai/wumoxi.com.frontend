@@ -269,13 +269,15 @@ export default {
     @media (min-width: 576px){
         .wscn-http404{
             width: 90%;
+            display: block;
         }
     }
     @media screen and (max-width: 768px){
         .wrapper{
             position: relative;
             .wscn-http404 {
-               width: 90%;
+                width: 90%;
+                display: block;
                 .pic-404 {
                     float: none;
                     width: 100%;
