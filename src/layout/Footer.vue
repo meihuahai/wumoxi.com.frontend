@@ -7,9 +7,9 @@
         <div class="container">
             <div class="copyright">
                 <!-- Copyright -->
-                <span class="site">{{ site }}</span>
+                <span class="site">{{ domain }}</span>
                 <span class="copyright">&copy;</span>
-                <a v-bind:href="authorUrl" rel="noopener" target="_blank">{{ author }}</a>
+                <a v-bind:href="url" rel="noopener" target="_blank">{{ name }}</a>
                 <span>{{ year }}</span>
 
                 <!-- Beian -->
@@ -30,11 +30,11 @@
         data() {
             return {
                 year: new Date().getFullYear(),
-                site: process.env.VUE_APP_FOOTER_SITE,
-                author: process.env.VUE_APP_FOOTER_AUTHOR,
-                authorUrl: process.env.VUE_APP_FOOTER_AUTHOR_URL,
-                beians: process.env.VUE_APP_FOOTER_BEIAN.split(","),
-                beianUrl: process.env.VUE_APP_FOOTER_BEIAN_URL,
+                domain: process.env.VUE_APP_MINI_DOMAIN,
+                name: process.env.VUE_APP_SITE_NAME,
+                url: process.env.VUE_APP_FULL_DOMAIN,
+                beians: process.env.VUE_APP_SITE_BEIAN.split(","),
+                beianUrl: process.env.VUE_APP_SITE_BEIAN_URL,
             };
         }
     };

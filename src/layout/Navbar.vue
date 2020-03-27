@@ -2,7 +2,7 @@
     <navbar
         ref="navbar"
         menu-classes="ml-auto"
-        type="primary"
+        :type="backgroundColor"
         meum-classes="lm-auto"
     >
         <template slot-scope="{ toggle, isToggled }">
@@ -41,6 +41,10 @@
         props: {
             transparent: Boolean,
             colorOnScroll: Number,
+            backgroundColor: {
+                type: String,
+                default: 'default'
+            }
         },
         components: {
             NavLink,

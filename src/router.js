@@ -14,6 +14,7 @@ import CategoriesList from './pages/CategoriesList';
 import Questions from './pages/Questions';
 
 Vue.use(Router);
+const theme = process.env.VUE_APP_THEME_COLOR;
 
 export default new Router({
     linkExactActiveClass: 'active',
@@ -23,8 +24,8 @@ export default new Router({
             name: '404',
             components: {default: NotFound, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400},
-                footer: {backgroundColor: 'black'}
+                header: {colorOnScroll: 400, backgroundColor: theme},
+                footer: {backgroundColor: theme}
             }
         },
         {
@@ -32,8 +33,8 @@ export default new Router({
             name: 'index',
             components: {default: Index, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400},
-                footer: {backgroundColor: 'black'}
+                header: {colorOnScroll: 400, backgroundColor: theme},
+                footer: {backgroundColor: theme}
             }
         },
         {
@@ -42,8 +43,8 @@ export default new Router({
             name: 'info',
             components: {default: Info, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400,},
-                footer: {backgroundColor: 'black'}
+                header: {colorOnScroll: 400, backgroundColor: theme},
+                footer: {backgroundColor: theme}
             }
         },
         {
@@ -52,8 +53,8 @@ export default new Router({
             name: 'labels',
             components: {default: Labels, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400,},
-                footer: {backgroundColor: 'black'}
+                header: {colorOnScroll: 400, backgroundColor: theme},
+                footer: {backgroundColor: theme}
             }
         },
         {
@@ -62,8 +63,8 @@ export default new Router({
             name: 'labels-list',
             components: {default: LabelsList, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400,},
-                footer: {backgroundColor: 'black'}
+                header: {colorOnScroll: 400, backgroundColor: theme},
+                footer: {backgroundColor: theme}
             }
         },
         {
@@ -71,8 +72,8 @@ export default new Router({
             name: 'archives',
             components: {default: Archives, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400,},
-                footer: {backgroundColor: 'black'}
+                header: {colorOnScroll: 400, backgroundColor: theme},
+                footer: {backgroundColor: theme}
             }
         },
         {
@@ -80,8 +81,8 @@ export default new Router({
             name: 'about',
             components: {default: About, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400,},
-                footer: {backgroundColor: 'black'}
+                header: {colorOnScroll: 400, backgroundColor: theme},
+                footer: {backgroundColor: theme}
             }
         },
         {
@@ -89,8 +90,8 @@ export default new Router({
             name: 'categories',
             components: {default: Categories, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400,},
-                footer: {backgroundColor: 'black'}
+                header: {colorOnScroll: 400, backgroundColor: theme},
+                footer: {backgroundColor: theme}
             }
         },
         {
@@ -98,8 +99,8 @@ export default new Router({
             name: 'categories-list',
             components: {default: CategoriesList, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400,},
-                footer: {backgroundColor: 'black'}
+                header: {colorOnScroll: 400, backgroundColor: theme},
+                footer: {backgroundColor: theme}
             }
         },
         {
@@ -107,8 +108,8 @@ export default new Router({
             name: 'questions',
             components: {default: Questions, header: Navbar, footer: Footer},
             props: {
-                header: {colorOnScroll: 400,},
-                footer: {backgroundColor: 'black'}
+                header: {colorOnScroll: 400, backgroundColor: theme},
+                footer: {backgroundColor: theme}
             }
         },
         // Ref: https://stackoverflow.com/questions/45619407/how-to-create-a-404-component-in-vuejs-using-vue-router
