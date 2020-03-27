@@ -38,7 +38,7 @@
             }
         },
         mounted() {
-            if (process.env.VUE_APP_SHOW_MARK) {
+            if (process.env.VUE_APP_SHOW_MARK === true) {
                 marked();
             }
         }

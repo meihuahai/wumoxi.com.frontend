@@ -17,15 +17,12 @@
 </template>
 <script>
     import {ArticleItem, Sidebar} from '@/components';
-    import {MockLabels, MockNews} from '@/data';
     import {getArticleListPaging} from "@/api/article";
     export default {
         name: 'index',
         data() {
             return {
                 articles: [],
-                labels: MockLabels,
-                news: MockNews,
                 query: {
                     number: 1,
                     size: 20

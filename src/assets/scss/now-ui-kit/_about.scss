@@ -1,0 +1,44 @@
+.lead {
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+
+.about-page {
+    padding: 0 3rem;
+    .jumbotron{
+        padding: $padding-introduce-card;
+        .reset-h3{
+            text-align: center;
+            margin: 1rem auto 2rem;
+            font-size: $font-size-h3;
+        }
+    }
+    &:after {
+        display: table;
+        clear: both;
+        content: " ";
+    }
+}
+@media (min-width: 576px){
+    .jumbotron {
+        padding: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-page{
+        padding: 0;
+        .col-md-12 {
+            padding-left: 0;
+        }
+        .jumbotron{
+            padding: 1rem;
+            .reset-h3{
+                text-align: left;
+                font-size: $font-size-h5;
+                margin: 0.5rem auto 1rem;
+            }
+        }
+    }
+}

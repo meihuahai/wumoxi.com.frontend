@@ -12,14 +12,13 @@
 <script>
     import VueMarkdown from 'vue-markdown'
     import {CategoriesItem} from '@/components'
-    import {MockCategories} from '@/data'
     import {getCategoryArticlesList} from "@/api/category";
 
     export default {
         name: 'categories',
         data() {
             return {
-                items: MockCategories
+                items: []
             }
         },
         components: {
