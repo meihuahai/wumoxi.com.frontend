@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Copy build directory into merge project view.
-cp -R ./dist/* $VUE/wumoxi.com.view/fore/
+rm -rf $VUE/wumoxi.com.view/fore
+cp -R fore $VUE/wumoxi.com.view
