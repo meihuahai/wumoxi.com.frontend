@@ -17,6 +17,7 @@ Vue.use(Router);
 const theme = process.env.VUE_APP_THEME_COLOR;
 
 export default new Router({
+    mode: 'history',
     linkExactActiveClass: 'active',
     routes: [
         {
