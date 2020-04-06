@@ -71,7 +71,7 @@
             Sidebar
         },
         created() {
-            // this.getArticleHandle();
+            this.getArticleHandle();
         },
         methods: {
             getArticleHandle() {
@@ -89,18 +89,18 @@
                 }
             }
         },
-        beforeRouteEnter(to, from, next) {
-            let id = to.params.id;
-            if (id !== undefined && !isNaN(parseInt(id))) {
-                getArticleByID(id).then(response => {
-                    next(vm => {
-                        vm.article = response.data;
-                        vm.summaryLoaded = true;
-                        vm.contentLoaded = true;
-                    });
-                });
-            }
-        },
+        // beforeRouteEnter(to, from, next) {
+        //     let id = to.params.id;
+        //     if (id !== undefined && !isNaN(parseInt(id))) {
+        //         getArticleByID(id).then(response => {
+        //             next(vm => {
+        //                 vm.article = response.data;
+        //                 vm.summaryLoaded = true;
+        //                 vm.contentLoaded = true;
+        //             });
+        //         });
+        //     }
+        // },
         // Ref: https://blog.csdn.net/xiaomajia029/article/details/96324558
         beforeRouteUpdate (to, from, next) {
             // 做一些想要做的处理...
