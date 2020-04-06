@@ -36,7 +36,7 @@
                             </div>
                             <hr>
                         </div>
-                        <comment :title="article.title" :description="article.title"></comment>
+                        <comment v-if="article.title !== '' && article.labels !== []" :label="article.labels" :title="article.title" :description="article.summary"></comment>
                     </div>
                 </div>
                 <div class="col-md-3 ml-auto col-xl-3 mr-auto float-right right-content">
