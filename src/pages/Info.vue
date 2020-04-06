@@ -20,7 +20,7 @@
                                 </span>
                                 <span class="pull-right">
                                     <span class="fa fa-comment"> <b>{{ article.comment }}</b> </span>
-                                    <span class="fa fa-eye"> <b>{{ article.view }}</b> </span>
+                                    <span class="fa fa-eye"> <b>{{ article.visit }}</b> </span>
                                     <span class="fa fa-thumbs-up"> <b>{{ article.like }}</b> </span>
                                 </span>
                             </div>
@@ -30,12 +30,13 @@
                                     <span class="badge badge-success">{{ label.name }}</span>
                                 </router-link>
                             </span>
-                            <div>
+                            <div class="custorm-markdown">
                                 <vue-markdown v-if="summaryLoaded">{{ article.summary }}</vue-markdown>
                                 <vue-markdown v-if="contentLoaded"> {{ article.content }} </vue-markdown>
                             </div>
                             <hr>
                         </div>
+                        <comment :title="article.title" :description="article.title"></comment>
                     </div>
                 </div>
                 <div class="col-md-3 ml-auto col-xl-3 mr-auto float-right right-content">
@@ -49,6 +50,7 @@
 <script>
     import {Sidebar} from '@/components'
     import {getArticleByID} from "@/api/article";
+    import Comment from "@/components/Comment";
 
     export default {
         data() {
@@ -68,7 +70,8 @@
             }
         },
         components: {
-            Sidebar
+            Sidebar,
+            Comment
         },
         created() {
             this.getArticleHandle();
@@ -123,6 +126,7 @@
 
 
 </script>
+
 <style>
     .starter-page {
         min-height: calc(100vh - 95px);

@@ -1,11 +1,10 @@
 <template>
     <footer
-        :class="{ [`footer-${type}`]: type }"
         :data-background-color="backgroundColor"
         class="footer"
     >
         <div class="container">
-            <div class="copyright">
+            <div :class="copyRightClass">
                 <!-- Copyright -->
                 <span class="site">{{ domain }}</span>
                 <span class="copyright">&copy;</span>
@@ -36,6 +35,11 @@
                 beians: process.env.VUE_APP_SITE_BEIAN.split(","),
                 beianUrl: process.env.VUE_APP_SITE_BEIAN_URL,
             };
+        },
+        computed:{
+            copyRightClass(){
+                return 'copyright copyright-'+this.backgroundColor;
+            }
         }
     };
 </script>

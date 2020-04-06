@@ -12,10 +12,10 @@
         </template>
         <template slot="navbar-menu">
             <li v-for="link in links" :key="link.url" class="nav-item">
-                <router-link class="nav-link" :to="link.url" v-if="!link.outside">
+                <nav-link class="nav-link" :to="link.url" v-if="!link.outside">
                     <i :class="link.icon"></i>
                     <p>{{ link.description }}</p>
-                </router-link>
+                </nav-link>
                 <a class="nav-link" :href="link.url" :target="link.target" v-else>
                     <i :class="link.icon"></i>
                     <p>{{ link.description }}</p>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import {DropDown, NavbarToggleButton, Navbar, NavLink} from '@/components';
+    import { NavbarToggleButton, Navbar, NavLink} from '@/components';
     import {Popover} from 'element-ui';
     const NavLinks = [
         {url: "/", description: "首 页", icon: "now-ui-icons ui-1_send", target: null, outside: false},
@@ -48,7 +48,6 @@
         },
         components: {
             NavLink,
-            DropDown,
             Navbar,
             NavbarToggleButton,
             [Popover.name]: Popover

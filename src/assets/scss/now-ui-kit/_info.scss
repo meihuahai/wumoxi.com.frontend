@@ -38,6 +38,9 @@
                         }
                     }
                 }
+                .badge{
+                    margin-right: $margin-bottom;
+                }
             }
         }
     }
@@ -103,6 +106,9 @@
                     .reset-h3{
                         text-align: left;
                         font-size: $font-size-h5;
+                    }
+                    .badge{
+                        margin-right: $margin-bottom;
                     }
                 }
             }

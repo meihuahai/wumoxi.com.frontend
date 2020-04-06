@@ -10,6 +10,8 @@ import PrismJS from '@/plugins/prism';
 import TopProgress from 'vue-top-progress'
 import VueWordCloud from 'vuewordcloud';
 
+
+
 Vue.component(VueWordCloud.name, VueWordCloud);
 Vue.component(Progress.name, Progress);
 Vue.component(Backtop.name, Backtop);

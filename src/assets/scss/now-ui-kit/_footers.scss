@@ -20,6 +20,12 @@
             margin: 0 1px 0 1px;
         }
     }
+    .copyright-white{
+        color: $default-color;
+        a{
+            color: $default-color !important;
+        }
+    }
 
     &:after {
         display: table;

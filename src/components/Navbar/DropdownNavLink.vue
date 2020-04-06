@@ -3,15 +3,15 @@
         :is="componentType"
         :to="to"
         @click.native.stop="closeNav"
-        class="nav-item"
+        class="dropdown-item"
     >
         <slot></slot>
     </component>
 </template>
 <script>
     export default {
-        name: 'nav-link',
-        inject: ['closeNavbar'],
+        name: 'dropdown-nav-link',
+        inject: ['closeNavbar', 'closeDropDown'],
         props: {
             to: {
                 type: [String, Object],
@@ -27,6 +27,9 @@
             closeNav() {
                 if (this.closeNavbar) {
                     this.closeNavbar();
+                }
+                if (this.closeDropDown) {
+                    this.closeDropDown()
                 }
             }
         }

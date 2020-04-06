@@ -17,7 +17,7 @@ Vue.use(Router);
 const theme = process.env.VUE_APP_THEME_COLOR;
 
 export default new Router({
-    mode: 'history',
+    // mode: 'history',
     linkExactActiveClass: 'active',
     routes: [
         {
@@ -26,7 +26,7 @@ export default new Router({
             components: {default: NotFound, header: Navbar, footer: Footer},
             props: {
                 header: {colorOnScroll: 400, backgroundColor: theme},
-                footer: {backgroundColor: theme}
+                footer: {backgroundColor: theme,}
             }
         },
         {

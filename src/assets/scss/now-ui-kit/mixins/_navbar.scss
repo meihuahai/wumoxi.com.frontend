@@ -196,11 +196,6 @@
 
         /* 修改导航抽屉颜色 */
         &:before {
-            background: $brand-primary; /* For browsers that do not support gradients */
-            background: -webkit-linear-gradient($brand-primary 0%, #fff 80%); /* For Safari 5.1 to 6.0 */
-            background: -o-linear-gradient($brand-primary 0%, #fff 80%); /* For Opera 11.1 to 12.0 */
-            background: -moz-linear-gradient($brand-primary 0%, #fff 80%); /* For Firefox 3.6 to 15 */
-            background: linear-gradient($brand-primary 0%, #fff 80%); /* Standard syntax (must be last) */
             @include opacity(.76);
 
             display: block;
@@ -228,7 +223,69 @@
             color: $white-color;
         }
     }
-
+    .navbar-collapse-white{
+         &:before {
+            background: $dark-gray; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient($dark-gray 0%, #fff 80%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient($dark-gray 0%, #fff 80%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient($dark-gray 0%, #fff 80%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient($dark-gray 0%, #fff 80%); /* Standard syntax (must be last) */
+        }
+    }
+    .navbar-collapse-default{
+         &:before {
+            background: $default-color; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient($default-color 0%, #fff 80%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient($default-color 0%, #fff 80%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient($default-color 0%, #fff 80%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient($default-color 0%, #fff 80%); /* Standard syntax (must be last) */
+        }
+    }
+    .navbar-collapse-primary{
+         &:before {
+            background: $brand-primary; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient($brand-primary 0%, #fff 80%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient($brand-primary 0%, #fff 80%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient($brand-primary 0%, #fff 80%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient($brand-primary 0%, #fff 80%); /* Standard syntax (must be last) */
+        }
+    }
+    .navbar-collapse-danger{
+         &:before {
+            background: $danger-color; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient($danger-color 0%, #fff 80%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient($danger-color 0%, #fff 80%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient($danger-color 0%, #fff 80%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient($danger-color 0%, #fff 80%); /* Standard syntax (must be last) */
+        }
+    }
+    .navbar-collapse-success{
+         &:before {
+            background: $success-color; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient($success-color 0%, #fff 80%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient($success-color 0%, #fff 80%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient($success-color 0%, #fff 80%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient($success-color 0%, #fff 80%); /* Standard syntax (must be last) */
+        }
+    }
+    .navbar-collapse-warning{
+         &:before {
+            background: $warning-color; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient($warning-color 0%, #fff 80%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient($warning-color 0%, #fff 80%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient($warning-color 0%, #fff 80%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient($warning-color 0%, #fff 80%); /* Standard syntax (must be last) */
+        }
+    }
+    .navbar-collapse-info{
+         &:before {
+            background: $info-color; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient($info-color 0%, #fff 80%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient($info-color 0%, #fff 80%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient($info-color 0%, #fff 80%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient($info-color 0%, #fff 80%); /* Standard syntax (must be last) */
+        }
+    }
     @include navbar-responsive();
 
 

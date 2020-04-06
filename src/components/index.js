@@ -13,6 +13,7 @@ import Card from './Cards/Card.vue';
 import Collapse from './Collapse/Collapse.vue';
 import CollapseItem from './Collapse/CollapseItem.vue';
 import Navbar from './Navbar/Navbar';
+import DropdownNavLink from './Navbar/DropdownNavLink';
 import NavLink from './Navbar/NavLink';
 import NavbarToggleButton from './Navbar/NavbarToggleButton';
 import TabPane from './Tabs/Tab.vue';
@@ -47,6 +48,7 @@ export {
     DropDown,
     Navbar,
     NavbarToggleButton,
+    DropdownNavLink,
     NavLink,
     TabPane,
     Tabs,

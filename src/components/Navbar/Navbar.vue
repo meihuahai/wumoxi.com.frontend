@@ -9,14 +9,8 @@
                 ></navbar-toggle-button>
             </div>
             <div
-                :class="[
-                  { show: showMenu },
-                  { 'has-image': menuImage },
-                  navMenuClasses
-                ]"
+                :class="navbarCollapseClass"
                 :style="menuImage ? `background: url(${menuImage}) 0% 0% / cover;` : ''"
-                class="navbar-collapse collapse"
-                data-color="orange"
                 id="navigation"
                 v-click-outside="close"
                 v-if="$slots['navbar-menu'] || $scopedSlots['navbar-menu']"
@@ -135,6 +129,16 @@
                     navPosition,
                     this.extraNavClasses
                 ];
+            },
+            navbarCollapseClass(){
+                const collapseClassName = 'navbar-collapse collapse navbar-collapse-' + this.type;
+                return [
+                    { show: this.showMenu },
+                    { 'has-image': this.menuImage },
+                    this.navMenuClasses,
+                    collapseClassName,
+                ];
+
             }
         },
         methods: {

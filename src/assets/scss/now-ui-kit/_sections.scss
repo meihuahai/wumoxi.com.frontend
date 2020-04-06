@@ -303,6 +303,8 @@
 
 [data-background-color="white"] {
     background-color: $white-bg;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
 }
 
 [data-background-color="orange"] {
